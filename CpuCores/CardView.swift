@@ -10,21 +10,20 @@ import SwiftUI
 struct Gauge: View {
     
     var title:String    // Titolo
-    var value:Double       // Valore
+    var value:String    // Valore
     var buttonHandler: (()->())?
     
-    init(title:String, value:Double, buttonHandler: (()->())?) {
+    init(title:String, value:String, buttonHandler: (()->())?) {
         self.title = title
         self.value = value
         self.buttonHandler = buttonHandler
     }
     
     var body: some View {
-        let usage = String(value);
         VStack(alignment: .center, spacing: 0) {
             HStack {
                 Text(title + ": ").foregroundColor(.black).padding()
-                Text(usage + "%").foregroundColor(.black).padding()
+                Text(value).foregroundColor(.black).padding()
             }
         }
         .background(Color.white)

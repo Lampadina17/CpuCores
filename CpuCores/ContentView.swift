@@ -7,16 +7,53 @@
 
 import SwiftUI
 import QuartzCore
+import Foundation
 
 struct ContentView: View {
+    @State var index = 0
     var body: some View {
+        let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+        
         ZStack {
             Circle().fill(AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .red]), center: .center))
+            
             VStack {
-                Gauge(title: "CPU Usage", value: cpuUsage(), buttonHandler: nil)
-                Gauge(title: "RAM Usage", value: 86, buttonHandler: nil)
-            }
+                Gauge(title: "CPU Usage", value: String(round(cpuUsage() * 10) / 10) + "%", buttonHandler: nil)
+                Gauge(title: "RAM Usage", value: displayRam(), buttonHandler: nil)
+                Gauge(title: "Uptime", value: displayUptime(), buttonHandler: nil)
+            }.onReceive(timer, perform: { _ in
+                index += 1
+            })
         }.ignoresSafeArea(.all)
+    }
+    
+    func kbtomb(bytes: UInt64) -> Double {
+        return round(((Double(bytes) / 1_024) / 1_024) * 1) / 1
+    }
+
+    func displayRam() -> String {
+        let used = String(kbtomb(bytes: memoryUsage()[0]))
+        let total = String(kbtomb(bytes: memoryUsage()[1]))
+        return used + "/" + total + "MB"
+    }
+    
+    func displayUptime() -> String {
+        /*
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        */
+        let wrapped = bootTime()
+        if let unwrappeddate = wrapped {
+            /*
+            let bootdate = formatter.date(from: "\(unwrappeddate)")
+            let today = formatter.date(from: "\(Date())")
+            //let difference = (today! - bootdate!)
+            
+            formatter.dateFormat = bootdate
+            return formatter.string(from: self)*/
+            return "\(unwrappeddate)"
+        }
+        return ""
     }
 }
 
@@ -26,6 +63,7 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+// https://github.com/dani-gavrilov/GDPerformanceView-Swift/blob/master/GDPerformanceView-Swift/GDPerformanceMonitoring/Performance%D0%A1alculator.swift
 private extension ContentView {
     
     func cpuUsage() -> Double {
@@ -63,8 +101,8 @@ private extension ContentView {
         return totalUsageOfCPU
     }
     
-    /*
-    func memoryUsage() -> MemoryUsage {
+    
+    func memoryUsage() -> [UInt64] {
         var taskInfo = task_vm_info_data_t()
         var count = mach_msg_type_number_t(MemoryLayout<task_vm_info>.size) / 4
         let result: kern_return_t = withUnsafeMutablePointer(to: &taskInfo) {
@@ -79,6 +117,16 @@ private extension ContentView {
         }
         
         let total = ProcessInfo.processInfo.physicalMemory
-        return (used, total)
-    }*/
+        return [used, total]
+    }
+    
+    func bootTime() -> Date? {
+        var tv = timeval()
+        var tvSize = MemoryLayout<timeval>.size
+        let err = sysctlbyname("kern.boottime", &tv, &tvSize, nil, 0);
+        guard err == 0, tvSize == MemoryLayout<timeval>.size else {
+            return nil
+        }
+        return Date(timeIntervalSince1970: Double(tv.tv_sec) + Double(tv.tv_usec) / 1_000_000.0)
+    }
 }
