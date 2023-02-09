@@ -10,27 +10,38 @@ import QuartzCore
 import Foundation
 
 struct ContentView: View {
-    @State var index = 0
+    @State var cpu = ""
+    @State var ram = ""
+    @State var uptime = ""
     var body: some View {
         let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
         
         ZStack {
-            Circle().fill(AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .red]), center: .center))
+            Rectangle().fill(AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .red]), center: .center)).blur(radius: 20)
             
             VStack {
-                Gauge(title: "CPU Usage", value: String(round(cpuUsage() * 10) / 10) + "%", buttonHandler: nil)
-                Gauge(title: "RAM Usage", value: displayRam(), buttonHandler: nil)
-                Gauge(title: "Uptime", value: displayUptime(), buttonHandler: nil)
+                Gauge(title: "CPU Usage", value: cpu)
+                HStack {
+                    Gauge(title: "Ram Usage", value: ram)
+                    MyButton(title: "Clear")
+                }
+                HStack {
+                    Gauge(title: "Disk Usage", value: ram)
+                    MyButton(title: "Clear")
+                }
+                Gauge(title: "Uptime", value: uptime)
             }.onReceive(timer, perform: { _ in
-                index += 1
+                cpu = String(round(cpuUsage() * 10) / 10) + "%"
+                ram = displayRam()
+                uptime = displayUptime()
             })
-        }.ignoresSafeArea(.all)
+        }.ignoresSafeArea(.all).preferredColorScheme(.dark)
     }
     
     func kbtomb(bytes: UInt64) -> Double {
         return round(((Double(bytes) / 1_024) / 1_024) * 1) / 1
     }
-
+    
     func displayRam() -> String {
         let used = String(kbtomb(bytes: memoryUsage()[0]))
         let total = String(kbtomb(bytes: memoryUsage()[1]))
@@ -39,18 +50,18 @@ struct ContentView: View {
     
     func displayUptime() -> String {
         /*
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd HH:mm"
-        */
+         let formatter = DateFormatter()
+         formatter.dateFormat = "yyyy/MM/dd HH:mm"
+         */
         let wrapped = bootTime()
         if let unwrappeddate = wrapped {
             /*
-            let bootdate = formatter.date(from: "\(unwrappeddate)")
-            let today = formatter.date(from: "\(Date())")
-            //let difference = (today! - bootdate!)
-            
-            formatter.dateFormat = bootdate
-            return formatter.string(from: self)*/
+             let bootdate = formatter.date(from: "\(unwrappeddate)")
+             let today = formatter.date(from: "\(Date())")
+             //let difference = (today! - bootdate!)
+             
+             formatter.dateFormat = bootdate
+             return formatter.string(from: self)*/
             return "\(unwrappeddate)"
         }
         return ""

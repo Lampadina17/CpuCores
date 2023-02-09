@@ -7,16 +7,39 @@
 
 import SwiftUI
 
+struct MyButton: View {
+    
+    var title:String // Titolo
+    
+    init(title: String) {
+        self.title = title
+    }
+    
+    var body: some View {
+        VStack(alignment: .center, spacing: 0) {
+            Button(action: {
+                print("outer button pressed")
+            }) {
+                Text(title)
+                    .foregroundColor(.black)
+                    .padding()
+                    .clipShape(RoundedRectangle(cornerRadius: 15.0, style: .continuous))
+            }
+        }
+        .background(Color.white)
+        .cornerRadius(15)
+        .shadow(color: Color.black.opacity(0.2), radius: 7, x: 0, y: 2)
+    }
+}
+
 struct Gauge: View {
     
-    var title:String    // Titolo
-    var value:String    // Valore
-    var buttonHandler: (()->())?
+    var title:String // Titolo
+    var value:String // Valore
     
-    init(title:String, value:String, buttonHandler: (()->())?) {
+    init(title:String, value:String) {
         self.title = title
         self.value = value
-        self.buttonHandler = buttonHandler
     }
     
     var body: some View {
@@ -32,11 +55,11 @@ struct Gauge: View {
     }
 }
 /*
-struct ProductCard_Previews: PreviewProvider {
-    static var previews: some View {
-        Gauge(title: "CPU Usage", value: 9, buttonHandler: nil)
-    }
-}*/
+ struct ProductCard_Previews: PreviewProvider {
+ static var previews: some View {
+ Gauge(title: "CPU Usage", value: 9, buttonHandler: nil)
+ }
+ }*/
 
 struct RoundedCorners: Shape {
     var tl: CGFloat = 0.0
