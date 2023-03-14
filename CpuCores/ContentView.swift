@@ -8,61 +8,87 @@
 import SwiftUI
 import QuartzCore
 import Foundation
+import Darwin
+
+struct CpuCore: Identifiable {
+    var id = UUID()
+    var name: String
+    var score: Int
+}
 
 struct ContentView: View {
     @State var cpu = ""
     @State var ram = ""
+    @State var disk = ""
     @State var uptime = ""
+    
+    let cores = [
+        CpuCore(name: "1", score: Int.random(in: 0..<100)),
+        CpuCore(name: "2", score: Int.random(in: 0..<100)),
+        CpuCore(name: "3", score: Int.random(in: 0..<100)),
+        CpuCore(name: "4", score: Int.random(in: 0..<100)),
+        CpuCore(name: "5", score: Int.random(in: 0..<100)),
+        CpuCore(name: "6", score: Int.random(in: 0..<100)),
+        CpuCore(name: "7", score: Int.random(in: 0..<100)),
+        CpuCore(name: "8", score: Int.random(in: 0..<100))
+    ]
+    
     var body: some View {
         let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
         
         ZStack {
-            Rectangle().fill(AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .red]), center: .center)).blur(radius: 20)
+            Rectangle().fill(AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .red]), center: .center)).blur(radius: 30)
             
             VStack {
-                Gauge(title: "CPU Usage", value: cpu)
-                HStack {
-                    Gauge(title: "Ram Usage", value: ram)
-                    MyButton(title: "Clear")
+                VStack() {
+                    Gauge(title: "CPU Usage", value: cpu)
+                    HStack {
+                        ForEach(cores) { core in
+                            CapsuleBar(value: core.score, maxValue: 100, width: 6, height: 80,  valueName: core.name, capsuleColor: ColorRGB(red: 255, green: 255, blue: 255))
+                        }
+                    }
                 }
-                HStack {
-                    Gauge(title: "Disk Usage", value: ram)
-                    MyButton(title: "Clear")
-                }
+                .padding()
+                .background(Color.white.opacity(0.3))
+                .cornerRadius(15)
+                .shadow(color: Color.black.opacity(0.2), radius: 7, x: 0, y: 2)
+                
+                Gauge(title: "Ram Usage", value: ram)
+                Gauge(title: "Disk Usage", value: disk)
                 Gauge(title: "Uptime", value: uptime)
             }.onReceive(timer, perform: { _ in
                 cpu = String(round(cpuUsage() * 10) / 10) + "%"
                 ram = displayRam()
+                disk = displayDisk()
                 uptime = displayUptime()
             })
         }.ignoresSafeArea(.all).preferredColorScheme(.dark)
     }
     
-    func kbtomb(bytes: UInt64) -> Double {
-        return round(((Double(bytes) / 1_024) / 1_024) * 1) / 1
+    func byteToMega(bytes: UInt64) -> UInt64 {
+        let megabytes = bytes / (1024 * 1024)
+        return megabytes;
     }
     
     func displayRam() -> String {
-        let used = String(kbtomb(bytes: memoryUsage()[0]))
-        let total = String(kbtomb(bytes: memoryUsage()[1]))
-        return used + "/" + total + "MB"
+        let processInfo = ProcessInfo()
+        let used = byteToMega(bytes: UInt64(memoryUsage()))
+        let total = byteToMega(bytes: processInfo.physicalMemory)
+        return "Used: \(used) MB\nTotal: \(total) MB"
+    }
+    
+    func displayDisk() -> String {
+        return "Used: \(DiskStatus.usedDiskSpace)\nFree: \(DiskStatus.freeDiskSpace)\nTotal: \(DiskStatus.totalDiskSpace)"
     }
     
     func displayUptime() -> String {
-        /*
-         let formatter = DateFormatter()
-         formatter.dateFormat = "yyyy/MM/dd HH:mm"
-         */
-        let wrapped = bootTime()
-        if let unwrappeddate = wrapped {
-            /*
-             let bootdate = formatter.date(from: "\(unwrappeddate)")
-             let today = formatter.date(from: "\(Date())")
-             //let difference = (today! - bootdate!)
-             
-             formatter.dateFormat = bootdate
-             return formatter.string(from: self)*/
-            return "\(unwrappeddate)"
+        if let bootTime = bootTime() {
+            let calendar = Calendar.current
+            let now = Date()
+            let components = calendar.dateComponents([.day, .hour, .minute], from: bootTime, to: now)
+            if let days = components.day, let hours = components.hour, let minutes = components.minute {
+                return "\(days)d \(hours)h \(minutes)m"
+            }
         }
         return ""
     }
@@ -112,23 +138,21 @@ private extension ContentView {
         return totalUsageOfCPU
     }
     
+    func multicpuUsage() -> [Double] {
+        return []
+    }
     
-    func memoryUsage() -> [UInt64] {
-        var taskInfo = task_vm_info_data_t()
-        var count = mach_msg_type_number_t(MemoryLayout<task_vm_info>.size) / 4
-        let result: kern_return_t = withUnsafeMutablePointer(to: &taskInfo) {
-            $0.withMemoryRebound(to: integer_t.self, capacity: 1) {
-                task_info(mach_task_self_, task_flavor_t(TASK_VM_INFO), $0, &count)
+    func memoryUsage() -> UInt32 {
+        var size = mach_msg_type_number_t(MemoryLayout<vm_statistics_data_t>.stride / MemoryLayout<integer_t>.stride)
+        var vmStats = vm_statistics_data_t()
+        
+        _ = withUnsafeMutablePointer(to: &vmStats) {
+            $0.withMemoryRebound(to: integer_t.self, capacity: Int(size)) {
+                host_statistics(mach_host_self(), HOST_VM_INFO, $0, &size)
             }
         }
         
-        var used: UInt64 = 0
-        if result == KERN_SUCCESS {
-            used = UInt64(taskInfo.phys_footprint)
-        }
-        
-        let total = ProcessInfo.processInfo.physicalMemory
-        return [used, total]
+        return (UInt32(vmStats.active_count) + UInt32(vmStats.inactive_count) + UInt32(vmStats.wire_count)) * numericCast(vm_page_size)
     }
     
     func bootTime() -> Date? {

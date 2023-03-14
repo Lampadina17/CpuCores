@@ -45,11 +45,11 @@ struct Gauge: View {
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
             HStack {
-                Text(title + ": ").foregroundColor(.black).padding()
-                Text(value).foregroundColor(.black).padding()
+                Text(title + ": ").foregroundColor(.white).padding()
+                Text(value).foregroundColor(.white).padding()
             }
         }
-        .background(Color.white)
+        .background(Color.white.opacity(0.3))
         .cornerRadius(15)
         .shadow(color: Color.black.opacity(0.2), radius: 7, x: 0, y: 2)
     }
@@ -103,20 +103,19 @@ struct CapsuleBar: View {
     var value: Int
     var maxValue: Int
     var width: CGFloat
+    var height: CGFloat
     var valueName: String
     var capsuleColor: ColorRGB
     var body: some View {
         VStack {
-            Text("\(value)")
             ZStack(alignment: .bottom) {
                 Capsule()
-                    .fill(Color.gray)
-                    .opacity(0.1)
-                    .frame(width: width, height: 400)
+                    .fill(Color.white)
+                    .opacity(0.5)
+                    .frame(width: width, height: height)
                 Capsule()
                     .fill(Color(.sRGB, red: capsuleColor.red, green: capsuleColor.green, blue: capsuleColor.blue))
-                    .frame(width: width, height: CGFloat(value) / CGFloat(maxValue) * 400)
-                    .animation(.easeOut(duration: 0.5))
+                    .frame(width: width, height: CGFloat(value) / CGFloat(maxValue) * height)
             }
             Text("\(valueName)")
         }
