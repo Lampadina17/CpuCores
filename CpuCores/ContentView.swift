@@ -13,51 +13,52 @@ import Darwin
 struct CpuCore: Identifiable {
     var id = UUID()
     var name: String
-    var score: Int
+    var score: Double
 }
 
 struct ContentView: View {
-    @State var cpu = ""
-    @State var ram = ""
-    @State var disk = ""
-    @State var uptime = ""
     
-    let cores = [
-        CpuCore(name: "1", score: Int.random(in: 0..<100)),
-        CpuCore(name: "2", score: Int.random(in: 0..<100)),
-        CpuCore(name: "3", score: Int.random(in: 0..<100)),
-        CpuCore(name: "4", score: Int.random(in: 0..<100)),
-        CpuCore(name: "5", score: Int.random(in: 0..<100)),
-        CpuCore(name: "6", score: Int.random(in: 0..<100)),
-        CpuCore(name: "7", score: Int.random(in: 0..<100)),
-        CpuCore(name: "8", score: Int.random(in: 0..<100))
+    @State var cpu: Double
+    @State var ram: String
+    @State var disk: String
+    @State var uptime: String
+    
+    var cores = [
+        CpuCore(name: "1", score: 0.0),
+        CpuCore(name: "2", score: 0.0),
+        CpuCore(name: "3", score: 0.0),
+        CpuCore(name: "4", score: 0.0),
+        CpuCore(name: "5", score: 0.0),
+        CpuCore(name: "6", score: 0.0),
     ]
     
     var body: some View {
         let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
         
         ZStack {
-            Rectangle().fill(AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .red]), center: .center)).blur(radius: 30)
+            LinearGradient(gradient: Gradient(colors: [.blue, .purple]), startPoint: .topLeading, endPoint: .bottomTrailing)
             
             VStack {
+                /*
                 VStack() {
-                    Gauge(title: "CPU Usage", value: cpu)
+                    Gauge(title: "CPU Usage", value: String("\(cpu)%"))
                     HStack {
                         ForEach(cores) { core in
-                            CapsuleBar(value: core.score, maxValue: 100, width: 6, height: 80,  valueName: core.name, capsuleColor: ColorRGB(red: 255, green: 255, blue: 255))
+                            CapsuleBar(value: Int(cpu), maxValue: 100, width: 6, height: 80, valueName: core.name, capsuleColor: ColorRGB(red: 255, green: 255, blue: 255)).padding(1)
                         }
                     }
                 }
                 .padding()
                 .background(Color.white.opacity(0.3))
-                .cornerRadius(15)
-                .shadow(color: Color.black.opacity(0.2), radius: 7, x: 0, y: 2)
-                
+                .cornerRadius(25)
+                .shadow(color: Color.black.opacity(0.2), radius: 7, x: 0, y: 0)
+                */
+                Gauge(title: "CPU Usage", value: String("\(cpu)%"))
                 Gauge(title: "Ram Usage", value: ram)
                 Gauge(title: "Disk Usage", value: disk)
                 Gauge(title: "Uptime", value: uptime)
             }.onReceive(timer, perform: { _ in
-                cpu = String(round(cpuUsage() * 10) / 10) + "%"
+                cpu = round(cpuUsage() * 10) / 10
                 ram = displayRam()
                 disk = displayDisk()
                 uptime = displayUptime()
@@ -74,11 +75,13 @@ struct ContentView: View {
         let processInfo = ProcessInfo()
         let used = byteToMega(bytes: UInt64(memoryUsage()))
         let total = byteToMega(bytes: processInfo.physicalMemory)
-        return "Used: \(used) MB\nTotal: \(total) MB"
+        return "Used: \(used)/\(total) MB"
     }
     
     func displayDisk() -> String {
-        return "Used: \(DiskStatus.usedDiskSpace)\nFree: \(DiskStatus.freeDiskSpace)\nTotal: \(DiskStatus.totalDiskSpace)"
+        let usedSpace = DiskStatus.usedDiskSpace.replacingOccurrences(of: "GB", with: "").replacingOccurrences(of: " ", with: "")
+        let totalSpace = DiskStatus.totalDiskSpace.replacingOccurrences(of: "GB", with: "").replacingOccurrences(of: " ", with: "")
+        return "Used: \(usedSpace)/\(totalSpace) GB"
     }
     
     func displayUptime() -> String {
@@ -96,7 +99,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(cpu: 0, ram: "", disk: "", uptime: "")
     }
 }
 
@@ -136,10 +139,6 @@ private extension ContentView {
         
         vm_deallocate(mach_task_self_, vm_address_t(UInt(bitPattern: threadsList)), vm_size_t(Int(threadsCount) * MemoryLayout<thread_t>.stride))
         return totalUsageOfCPU
-    }
-    
-    func multicpuUsage() -> [Double] {
-        return []
     }
     
     func memoryUsage() -> UInt32 {

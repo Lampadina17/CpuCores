@@ -21,13 +21,13 @@ struct MyButton: View {
                 print("outer button pressed")
             }) {
                 Text(title)
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
                     .padding()
-                    .clipShape(RoundedRectangle(cornerRadius: 15.0, style: .continuous))
+                    .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
             }
         }
-        .background(Color.white)
-        .cornerRadius(15)
+        .background(Color.white.opacity(0.3))
+        .cornerRadius(25)
         .shadow(color: Color.black.opacity(0.2), radius: 7, x: 0, y: 2)
     }
 }
@@ -50,8 +50,8 @@ struct Gauge: View {
             }
         }
         .background(Color.white.opacity(0.3))
-        .cornerRadius(15)
-        .shadow(color: Color.black.opacity(0.2), radius: 7, x: 0, y: 2)
+        .cornerRadius(20)
+        .shadow(color: Color.black.opacity(0.2), radius: 7, x: 0, y: 0)
     }
 }
 /*

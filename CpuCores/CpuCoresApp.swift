@@ -13,7 +13,7 @@ struct CpuCoresApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(cpu: 0, ram: "", disk: "", uptime: "")
         }
     }
 }
