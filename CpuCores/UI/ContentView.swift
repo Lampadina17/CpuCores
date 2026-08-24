@@ -7,6 +7,13 @@
 
 import SwiftUI
 
+private enum DashboardSheet: String, Identifiable {
+    case hardwareInfo
+    case settings
+
+    var id: String { rawValue }
+}
+
 struct ContentView: View {
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
@@ -15,6 +22,7 @@ struct ContentView: View {
     @StateObject private var systemCleaner = SystemCleanerService()
     @State private var diskStatus: DiskStatus?
     @State private var uptime = ""
+    @State private var presentedSheet: DashboardSheet?
 
     private let systemInfoProvider = SystemInfoProvider()
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -50,6 +58,16 @@ struct ContentView: View {
         }
         .onReceive(timer) { _ in
             refreshSystemInfo()
+        }
+        .sheet(item: $presentedSheet) { sheet in
+            Group {
+                switch sheet {
+                case .hardwareInfo:
+                    HardwareInfoView()
+                case .settings:
+                    RefreshSettingsView()
+                }
+            }
         }
     }
 
@@ -88,6 +106,7 @@ struct ContentView: View {
                 }
                 .frame(maxWidth: .infinity)
             }
+
         }
     }
 
@@ -105,6 +124,7 @@ struct ContentView: View {
                 }
                 .frame(maxWidth: .infinity)
             }
+
         }
     }
 
@@ -148,23 +168,59 @@ struct ContentView: View {
 
             Spacer()
 
-            HStack(spacing: 7) {
-                Circle()
-                    .fill(Color(red: 0.28, green: 1.0, blue: 0.69))
-                    .frame(width: 7, height: 7)
-                    .shadow(color: Color.green.opacity(0.8), radius: 5)
-                Text(CCLocalized("status.live"))
-                    .font(.system(size: 11, weight: .bold, design: .rounded))
-                    .foregroundColor(.white.opacity(0.86))
+            HStack(spacing: 8) {
+                HStack(spacing: 7) {
+                    Circle()
+                        .fill(Color(red: 0.28, green: 1.0, blue: 0.69))
+                        .frame(width: 7, height: 7)
+                        .shadow(color: Color.green.opacity(0.8), radius: 5)
+                    Text(CCLocalized("status.live"))
+                        .font(.system(size: 11, weight: .bold, design: .rounded))
+                        .foregroundColor(.white.opacity(0.86))
+                }
+                .padding(.horizontal, isNarrow ? 9 : 12)
+                .padding(.vertical, 8)
+                .background(Color.white.opacity(0.09))
+                .clipShape(Capsule())
+                .overlay(
+                    Capsule()
+                        .stroke(Color.white.opacity(0.14), lineWidth: 1)
+                )
+
+                Button {
+                    presentedSheet = .hardwareInfo
+                } label: {
+                    Image(systemName: "info.circle.fill")
+                        .font(.system(size: 15, weight: .semibold))
+                        .foregroundColor(.white.opacity(0.88))
+                        .frame(width: 34, height: 34)
+                        .background(Color.white.opacity(0.09))
+                        .clipShape(Circle())
+                        .overlay(
+                            Circle()
+                                .stroke(Color.white.opacity(0.14), lineWidth: 1)
+                        )
+                }
+                .buttonStyle(PlainButtonStyle())
+                .accessibilityLabel(CCLocalized("hardware.section.title"))
+
+                Button {
+                    presentedSheet = .settings
+                } label: {
+                    Image(systemName: "gearshape.fill")
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundColor(.white.opacity(0.88))
+                        .frame(width: 34, height: 34)
+                        .background(Color.white.opacity(0.09))
+                        .clipShape(Circle())
+                        .overlay(
+                            Circle()
+                                .stroke(Color.white.opacity(0.14), lineWidth: 1)
+                        )
+                }
+                .buttonStyle(PlainButtonStyle())
+                .accessibilityLabel(CCLocalized("accessibility.open_settings"))
             }
-            .padding(.horizontal, isNarrow ? 9 : 12)
-            .padding(.vertical, 8)
-            .background(Color.white.opacity(0.09))
-            .clipShape(Capsule())
-            .overlay(
-                Capsule()
-                    .stroke(Color.white.opacity(0.14), lineWidth: 1)
-            )
         }
         .padding(.horizontal, 2)
         .padding(.bottom, 2)
@@ -172,8 +228,140 @@ struct ContentView: View {
 
     private func refreshSystemInfo() {
         memoryMonitor.refresh()
-        diskStatus = DiskStatus.current()
+        let currentDiskStatus = DiskStatus.current()
+        diskStatus = currentDiskStatus
         uptime = systemInfoProvider.displayUptime()
+    }
+}
+
+private struct HardwareInfoView: View {
+    @Environment(\.presentationMode) private var presentationMode
+    @State private var hardwareInfo: DeviceHardwareInfo?
+
+    private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+
+    var body: some View {
+        NavigationView {
+            ZStack {
+                SystemBackground()
+
+                ScrollView(showsIndicators: false) {
+                    HardwareSpecsBlock(info: hardwareInfo)
+                        .padding(18)
+                }
+            }
+            .navigationBarTitle(CCLocalized("hardware.section.title"), displayMode: .inline)
+            .navigationBarItems(
+                trailing: Button(CCLocalized("action.done")) {
+                    presentationMode.wrappedValue.dismiss()
+                }
+            )
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
+        .preferredColorScheme(.dark)
+        .onAppear {
+            refreshHardwareInfo()
+        }
+        .onReceive(timer) { _ in
+            refreshHardwareInfo()
+        }
+    }
+
+    private func refreshHardwareInfo() {
+        hardwareInfo = DeviceHardwareInfo.current()
+    }
+}
+
+private struct RefreshSettingsView: View {
+    @Environment(\.presentationMode) private var presentationMode
+    @AppStorage(WidgetRefreshSettings.storageKey) private var refreshIntervalMilliseconds =
+        WidgetRefreshSettings.defaultMilliseconds
+
+    private var intervalBinding: Binding<Double> {
+        Binding(
+            get: {
+                Double(WidgetRefreshSettings.clamped(refreshIntervalMilliseconds))
+            },
+            set: { newValue in
+                let milliseconds = WidgetRefreshSettings.clamped(Int(newValue.rounded()))
+                refreshIntervalMilliseconds = milliseconds
+                WidgetKeepAliveController.shared.updateRefreshInterval(milliseconds: milliseconds)
+            }
+        )
+    }
+
+    var body: some View {
+        NavigationView {
+            ZStack {
+                SystemBackground()
+
+                ScrollView(showsIndicators: false) {
+                    GlassBlock {
+                        VStack(alignment: .leading, spacing: 20) {
+                            HStack(spacing: 14) {
+                                Image(systemName: "arrow.clockwise")
+                                    .font(.system(size: 19, weight: .semibold))
+                                    .foregroundColor(Color(red: 0.24, green: 0.84, blue: 1.0))
+                                    .frame(width: 44, height: 44)
+                                    .background(Color.white.opacity(0.07))
+                                    .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
+
+                                VStack(alignment: .leading, spacing: 3) {
+                                    Text(CCLocalized("settings.refresh.title"))
+                                        .font(.system(size: 16, weight: .bold, design: .rounded))
+                                        .foregroundColor(.white)
+                                    Text(CCLocalized("settings.refresh.subtitle"))
+                                        .font(.caption)
+                                        .foregroundColor(.white.opacity(0.62))
+                                }
+
+                                Spacer(minLength: 8)
+
+                                Text(CCFormatted("settings.refresh.value_format", refreshIntervalMilliseconds))
+                                    .font(.system(size: 15, weight: .bold, design: .monospaced))
+                                    .foregroundColor(.white)
+                            }
+
+                            Slider(
+                                value: intervalBinding,
+                                in: Double(WidgetRefreshSettings.minimumMilliseconds)...Double(WidgetRefreshSettings.maximumMilliseconds),
+                                step: Double(WidgetRefreshSettings.stepMilliseconds)
+                            )
+                            .accentColor(Color(red: 0.24, green: 0.84, blue: 1.0))
+
+                            HStack {
+                                Text(CCFormatted("settings.refresh.value_format", WidgetRefreshSettings.minimumMilliseconds))
+                                Spacer()
+                                Text(CCFormatted("settings.refresh.value_format", WidgetRefreshSettings.maximumMilliseconds))
+                            }
+                            .font(.system(size: 11, weight: .semibold, design: .rounded))
+                            .foregroundColor(.white.opacity(0.52))
+
+                            Text(CCLocalized("settings.refresh.description"))
+                                .font(.footnote)
+                                .foregroundColor(.white.opacity(0.64))
+                                .fixedSize(horizontal: false, vertical: true)
+                        }
+                    }
+                    .padding(18)
+                }
+            }
+            .navigationBarTitle(CCLocalized("settings.title"), displayMode: .inline)
+            .navigationBarItems(
+                trailing: Button(CCLocalized("action.done")) {
+                    presentationMode.wrappedValue.dismiss()
+                }
+            )
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
+        .preferredColorScheme(.dark)
+        .onAppear {
+            let normalizedInterval = WidgetRefreshSettings.clamped(refreshIntervalMilliseconds)
+            if normalizedInterval != refreshIntervalMilliseconds {
+                refreshIntervalMilliseconds = normalizedInterval
+                WidgetKeepAliveController.shared.updateRefreshInterval(milliseconds: normalizedInterval)
+            }
+        }
     }
 }
 

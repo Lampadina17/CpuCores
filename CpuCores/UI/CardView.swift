@@ -322,6 +322,125 @@ struct UptimeStatsBlock: View {
     }
 }
 
+struct HardwareSpecsBlock: View {
+    let info: DeviceHardwareInfo?
+
+    var body: some View {
+        GlassBlock {
+            VStack(alignment: .leading, spacing: 20) {
+                SectionHeader(
+                    title: CCLocalized("hardware.section.title"),
+                    subtitle: CCLocalized("hardware.section.subtitle"),
+                    icon: "iphone",
+                    value: "",
+                    accent: Color(red: 0.38, green: 0.72, blue: 1.0)
+                )
+
+                if let info {
+                    HardwareSpecGroup(
+                        title: CCLocalized("hardware.group.device"),
+                        items: [
+                            HardwareSpecItem(label: CCLocalized("hardware.device.family"), value: info.deviceFamily),
+                            HardwareSpecItem(label: CCLocalized("hardware.device.identifier"), value: info.modelIdentifier),
+                            HardwareSpecItem(label: CCLocalized("hardware.device.board"), value: info.boardIdentifier),
+                            HardwareSpecItem(label: CCLocalized("hardware.device.os"), value: info.operatingSystem)
+                        ]
+                    )
+
+                    HardwareSpecGroup(
+                        title: CCLocalized("hardware.group.processor"),
+                        items: [
+                            HardwareSpecItem(label: CCLocalized("hardware.processor.architecture"), value: info.architecture),
+                            HardwareSpecItem(label: CCLocalized("hardware.processor.logical_cores"), value: "\(info.logicalCoreCount)"),
+                            HardwareSpecItem(label: CCLocalized("hardware.processor.active_cores"), value: "\(info.activeCoreCount)"),
+                            HardwareSpecItem(label: CCLocalized("hardware.memory.physical"), value: info.physicalMemory),
+                            HardwareSpecItem(label: CCLocalized("hardware.memory.page_size"), value: info.memoryPageSize),
+                            HardwareSpecItem(label: CCLocalized("hardware.storage.capacity"), value: info.storageCapacity),
+                            HardwareSpecItem(label: CCLocalized("hardware.storage.available"), value: info.storageAvailable)
+                        ]
+                    )
+
+                    HardwareSpecGroup(
+                        title: CCLocalized("hardware.group.display"),
+                        items: [
+                            HardwareSpecItem(label: CCLocalized("hardware.display.native_resolution"), value: info.nativeResolution),
+                            HardwareSpecItem(label: CCLocalized("hardware.display.logical_resolution"), value: info.logicalResolution),
+                            HardwareSpecItem(label: CCLocalized("hardware.display.scale"), value: info.displayScale),
+                            HardwareSpecItem(label: CCLocalized("hardware.display.maximum_refresh"), value: info.maximumRefreshRate)
+                        ]
+                    )
+
+                    HardwareSpecGroup(
+                        title: CCLocalized("hardware.group.power"),
+                        items: [
+                            HardwareSpecItem(label: CCLocalized("hardware.battery.level"), value: info.batteryLevel),
+                            HardwareSpecItem(label: CCLocalized("hardware.battery.state"), value: info.batteryState),
+                            HardwareSpecItem(label: CCLocalized("hardware.battery.health"), value: info.batteryHealth),
+                            HardwareSpecItem(label: CCLocalized("hardware.battery.wear"), value: info.batteryWear),
+                            HardwareSpecItem(label: CCLocalized("hardware.battery.maximum_capacity"), value: info.batteryMaximumCapacity),
+                            HardwareSpecItem(label: CCLocalized("hardware.battery.design_capacity"), value: info.batteryDesignCapacity),
+                            HardwareSpecItem(label: CCLocalized("hardware.battery.cycle_count"), value: info.batteryCycleCount),
+                            HardwareSpecItem(label: CCLocalized("hardware.thermal.state"), value: info.thermalState),
+                            HardwareSpecItem(label: CCLocalized("hardware.low_power_mode"), value: info.lowPowerMode)
+                        ]
+                    )
+                } else {
+                    LoadingRow(message: CCLocalized("hardware.loading"))
+                }
+            }
+        }
+    }
+}
+
+private struct HardwareSpecItem: Identifiable {
+    let label: String
+    let value: String
+
+    var id: String { label }
+}
+
+private struct HardwareSpecGroup: View {
+    let title: String
+    let items: [HardwareSpecItem]
+
+    private let columns = [
+        GridItem(.adaptive(minimum: 132), spacing: 10, alignment: .top)
+    ]
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text(title)
+                .font(.system(size: 10, weight: .bold, design: .rounded))
+                .foregroundColor(.white.opacity(0.58))
+
+            LazyVGrid(columns: columns, alignment: .leading, spacing: 10) {
+                ForEach(items) { item in
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(item.label)
+                            .font(.system(size: 9, weight: .bold, design: .rounded))
+                            .foregroundColor(.white.opacity(0.52))
+                            .lineLimit(1)
+
+                        Text(item.value)
+                            .font(.system(size: 12, weight: .semibold, design: .rounded))
+                            .foregroundColor(.white.opacity(0.90))
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.70)
+                    }
+                    .padding(12)
+                    .frame(maxWidth: .infinity, minHeight: 62, alignment: .leading)
+                    .background(Color.white.opacity(0.055))
+                    .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 14, style: .continuous)
+                            .stroke(Color.white.opacity(0.07), lineWidth: 1)
+                    )
+                }
+            }
+        }
+    }
+}
+
 struct GlassBlock<Content: View>: View {
     private let content: Content
     private let contentPadding: CGFloat

@@ -2,6 +2,25 @@ import AVFoundation
 import Foundation
 import WidgetKit
 
+enum WidgetRefreshSettings {
+    static let storageKey = "widgetRefreshIntervalMilliseconds"
+    static let defaultMilliseconds = 1_500
+    static let minimumMilliseconds = 1_000
+    static let maximumMilliseconds = 5_000
+    static let stepMilliseconds = 500
+
+    static var currentMilliseconds: Int {
+        guard UserDefaults.standard.object(forKey: storageKey) != nil else {
+            return defaultMilliseconds
+        }
+        return clamped(UserDefaults.standard.integer(forKey: storageKey))
+    }
+
+    static func clamped(_ milliseconds: Int) -> Int {
+        min(max(milliseconds, minimumMilliseconds), maximumMilliseconds)
+    }
+}
+
 /// Experimental sideload-only keep-alive.
 ///
 /// An active, silent and mixable audio session keeps the containing app
@@ -36,6 +55,18 @@ final class WidgetKeepAliveController: NSObject {
         workQueue.async { [weak self] in
             self?.startAudioIfNeeded()
             self?.startRefreshTimerIfNeeded()
+        }
+    }
+
+    func updateRefreshInterval(milliseconds: Int) {
+        let normalizedInterval = WidgetRefreshSettings.clamped(milliseconds)
+        UserDefaults.standard.set(normalizedInterval, forKey: WidgetRefreshSettings.storageKey)
+
+        workQueue.async { [weak self] in
+            guard let self, self.refreshTimer != nil else { return }
+            self.refreshTimer?.cancel()
+            self.refreshTimer = nil
+            self.startRefreshTimerIfNeeded()
         }
     }
 
@@ -87,7 +118,7 @@ final class WidgetKeepAliveController: NSObject {
         let timer = DispatchSource.makeTimerSource(queue: workQueue)
         timer.schedule(
             deadline: .now(),
-            repeating: .milliseconds(1500),
+            repeating: .milliseconds(WidgetRefreshSettings.currentMilliseconds),
             leeway: .milliseconds(250)
         )
         timer.setEventHandler {
