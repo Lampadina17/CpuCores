@@ -1,0 +1,67 @@
+"app.title" = "CPU CORES";
+"dashboard.subtitle" = "Системная статистика";
+"status.live" = "АКТИВНО";
+
+"metric.cpu.title" = "CPU";
+"metric.cpu.subtitle" = "Многоядерная нагрузка";
+"metric.ram.title" = "RAM";
+"metric.ram.subtitle" = "Системная память";
+"metric.disk.title" = "ХРАНИЛИЩЕ";
+"metric.disk.short" = "ДИСК";
+"metric.disk.subtitle" = "Использовано";
+"metric.uptime.title" = "АПТАЙМ";
+"metric.uptime.subtitle" = "Время с последнего запуска";
+"metric.uptime.active" = "СИСТЕМА АКТИВНА";
+"metric.core.format" = "ЯДРО %d";
+"metric.core.range_format" = "ЯДРА %d–%d";
+"metric.core.group" = "ЯДРА";
+
+"memory.used" = "ЗАНЯТО";
+"memory.total" = "ВСЕГО";
+"memory.free" = "СВОБОДНО";
+"memory.active" = "АКТИВНАЯ";
+"memory.inactive" = "НЕАКТИВНАЯ";
+"memory.wired" = "ЗАКРЕПЛЕНА";
+"disk.used" = "ЗАНЯТО";
+"disk.free" = "СВОБОДНО";
+"disk.total" = "ВСЕГО";
+
+"loading.cpu" = "Измерение ядер…";
+"loading.memory" = "Чтение памяти…";
+"error.cpu.initialize" = "Не удалось запустить монитор CPU.";
+"error.cpu.read" = "Многоядерное измерение недоступно.";
+"error.memory.read" = "Измерение памяти недоступно.";
+"error.disk.read" = "Измерение диска недоступно.";
+"common.unavailable" = "Недоступно";
+"summary.used_format" = "Использовано: %@/%@";
+"accessibility.percent_format" = "%d процентов";
+"accessibility.cancel_format" = "Отменить %@";
+"uptime.format" = "%d д %d ч %d мин";
+
+"clean.section.title" = "ОЧИСТКА СИСТЕМЫ";
+"clean.ram.title" = "Очистить RAM";
+"clean.ram.subtitle" = "Создаёт контролируемую нагрузку и сразу освобождает память.";
+"clean.disk.title" = "Очистить диск";
+"clean.disk.subtitle" = "Запрашивает у APFS удаление очищаемых кэшей.";
+"clean.disclaimer" = "Очистка косвенная: iOS сама решает, какие системные кэши можно удалить.";
+"action.cancel" = "Отменить";
+
+"clean.ram.result.success" = "Нагрузка завершена: %@ выделено и освобождено.";
+"clean.ram.result.cancelled" = "Очистка RAM отменена; временная память освобождена.";
+"clean.ram.result.no_work" = "RAM уже нагружена; операция пропущена для безопасности.";
+"clean.ram.result.limit" = "Достигнут лимит памяти; временные блоки освобождены.";
+"clean.ram.result.unavailable" = "Очистка RAM сейчас недоступна.";
+"clean.disk.result.success" = "Цикл APFS завершён: удалено %@ временных данных.";
+"clean.disk.result.reclaimed" = "Оценочно освобождено: %@.";
+"clean.disk.result.cancelled" = "Очистка диска отменена; временный файл удалён.";
+"clean.disk.result.no_work" = "Недостаточно свободного места для сохранения запаса безопасности.";
+"clean.disk.result.memory" = "Недостаточно памяти для буфера записи.";
+"clean.disk.result.io_error" = "Запись остановлена; остатки будут удалены при следующем цикле.";
+"clean.disk.result.unavailable" = "Очистка APFS сейчас недоступна.";
+
+"widget.configuration.name" = "CPU Cores";
+"widget.configuration.description" = "Многоядерный CPU, RAM, диск и аптайм.";
+"widget.battery" = "БАТАРЕЯ";
+"widget.cpu.multicore" = "МНОГОЯДЕРНЫЙ CPU";
+"widget.core.unavailable" = "Ядра недоступны";
+"widget.core.short_format" = "Я%d";

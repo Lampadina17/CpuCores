@@ -1,0 +1,67 @@
+"app.title" = "CPU CORES";
+"dashboard.subtitle" = "Statystyki systemu";
+"status.live" = "NA ŻYWO";
+
+"metric.cpu.title" = "CPU";
+"metric.cpu.subtitle" = "Obciążenie wielordzeniowe";
+"metric.ram.title" = "RAM";
+"metric.ram.subtitle" = "Pamięć systemowa";
+"metric.disk.title" = "PAMIĘĆ";
+"metric.disk.short" = "DYSK";
+"metric.disk.subtitle" = "Zajęte miejsce";
+"metric.uptime.title" = "CZAS PRACY";
+"metric.uptime.subtitle" = "Czas od ostatniego uruchomienia";
+"metric.uptime.active" = "SYSTEM AKTYWNY";
+"metric.core.format" = "RDZEŃ %d";
+"metric.core.range_format" = "RDZENIE %d–%d";
+"metric.core.group" = "RDZENIE";
+
+"memory.used" = "UŻYTA";
+"memory.total" = "ŁĄCZNIE";
+"memory.free" = "WOLNA";
+"memory.active" = "AKTYWNA";
+"memory.inactive" = "NIEAKTYWNA";
+"memory.wired" = "ZABLOKOWANA";
+"disk.used" = "UŻYTE";
+"disk.free" = "WOLNE";
+"disk.total" = "ŁĄCZNIE";
+
+"loading.cpu" = "Pomiar rdzeni…";
+"loading.memory" = "Odczyt pamięci…";
+"error.cpu.initialize" = "Nie można uruchomić monitora CPU.";
+"error.cpu.read" = "Pomiar wielordzeniowy jest niedostępny.";
+"error.memory.read" = "Pomiar pamięci jest niedostępny.";
+"error.disk.read" = "Pomiar dysku jest niedostępny.";
+"common.unavailable" = "Niedostępne";
+"summary.used_format" = "Użyte: %@/%@";
+"accessibility.percent_format" = "%d procent";
+"accessibility.cancel_format" = "Anuluj %@";
+"uptime.format" = "%d d %d godz. %d min";
+
+"clean.section.title" = "CZYSZCZENIE SYSTEMU";
+"clean.ram.title" = "Wyczyść RAM";
+"clean.ram.subtitle" = "Tworzy kontrolowane obciążenie i natychmiast zwalnia pamięć.";
+"clean.disk.title" = "Wyczyść dysk";
+"clean.disk.subtitle" = "Prosi APFS o usunięcie zbędnych pamięci podręcznych.";
+"clean.disclaimer" = "Czyszczenie jest pośrednie: iOS wybiera pamięci podręczne systemu, które można usunąć.";
+"action.cancel" = "Anuluj";
+
+"clean.ram.result.success" = "Obciążenie zakończone: przydzielono i zwolniono %@.";
+"clean.ram.result.cancelled" = "Anulowano czyszczenie RAM; pamięć tymczasowa została zwolniona.";
+"clean.ram.result.no_work" = "RAM jest już obciążony; operację pominięto ze względów bezpieczeństwa.";
+"clean.ram.result.limit" = "Osiągnięto limit pamięci; bloki tymczasowe zostały zwolnione.";
+"clean.ram.result.unavailable" = "Czyszczenie RAM jest obecnie niedostępne.";
+"clean.disk.result.success" = "Cykl APFS zakończony: usunięto %@ danych tymczasowych.";
+"clean.disk.result.reclaimed" = "Szacunkowo odzyskano: %@.";
+"clean.disk.result.cancelled" = "Anulowano czyszczenie dysku; plik tymczasowy został usunięty.";
+"clean.disk.result.no_work" = "Za mało wolnego miejsca, aby zachować margines bezpieczeństwa.";
+"clean.disk.result.memory" = "Za mało pamięci dla bufora zapisu.";
+"clean.disk.result.io_error" = "Zapis zatrzymany; pozostałości zostaną usunięte w następnym cyklu.";
+"clean.disk.result.unavailable" = "Czyszczenie APFS jest obecnie niedostępne.";
+
+"widget.configuration.name" = "CPU Cores";
+"widget.configuration.description" = "Wielordzeniowe CPU, RAM, pamięć i czas pracy.";
+"widget.battery" = "BATERIA";
+"widget.cpu.multicore" = "CPU WIELORDZENIOWE";
+"widget.core.unavailable" = "Rdzenie niedostępne";
+"widget.core.short_format" = "R%d";

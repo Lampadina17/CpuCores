@@ -7,12 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5144933C2B402F64000DE842 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5144933B2B402F64000DE842 /* WidgetKit.framework */; };
+		5144933D2B402F64000DE842 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5197721228EB1EC9000FCB61 /* SwiftUI.framework */; };
+		514493402B402F64000DE842 /* widgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5144933F2B402F64000DE842 /* widgetBundle.swift */; };
+		514493422B402F64000DE842 /* widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514493412B402F64000DE842 /* widget.swift */; };
+		514493442B402F65000DE842 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 514493432B402F65000DE842 /* Assets.xcassets */; };
+		514493482B402F65000DE842 /* widgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5144933A2B402F64000DE842 /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5144934C2B403001000DE842 /* SystemInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515707A12B4025DC0059F3EF /* SystemInfoProvider.swift */; };
+		5144934D2B403005000DE842 /* SystemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515707A32B4029480059F3EF /* SystemInfo.swift */; };
+		5144934E2B403009000DE842 /* DiskStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AF2A4129BDDDF00088F52D /* DiskStatus.swift */; };
 		514A5BFA28EB15F200274CF6 /* CpuCoresApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514A5BF928EB15F200274CF6 /* CpuCoresApp.swift */; };
 		514A5BFC28EB15F200274CF6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514A5BFB28EB15F200274CF6 /* ContentView.swift */; };
 		514A5BFE28EB15F300274CF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 514A5BFD28EB15F300274CF6 /* Assets.xcassets */; };
+		515707A22B4025DC0059F3EF /* SystemInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515707A12B4025DC0059F3EF /* SystemInfoProvider.swift */; };
+		515707A42B4029480059F3EF /* SystemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515707A32B4029480059F3EF /* SystemInfo.swift */; };
 		516D72C228EDBBAF00AC7664 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516D72C128EDBBAF00AC7664 /* CardView.swift */; };
 		51AF2A4229BDDDF00088F52D /* DiskStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AF2A4129BDDDF00088F52D /* DiskStatus.swift */; };
+		FC0C00010000000000000001 /* MulticoreSampler.c in Sources */ = {isa = PBXBuildFile; fileRef = FC0C00100000000000000001 /* MulticoreSampler.c */; };
+		FC0C00020000000000000001 /* CPUCoreMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0C00130000000000000001 /* CPUCoreMonitor.swift */; };
+		FC0C00030000000000000001 /* MemorySampler.c in Sources */ = {isa = PBXBuildFile; fileRef = FC0C00140000000000000001 /* MemorySampler.c */; };
+		FC0C00040000000000000001 /* SystemMemoryMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0C00160000000000000001 /* SystemMemoryMonitor.swift */; };
+		FC0C00050000000000000001 /* MulticoreSampler.c in Sources */ = {isa = PBXBuildFile; fileRef = FC0C00100000000000000001 /* MulticoreSampler.c */; };
+		FC0C00060000000000000001 /* MemorySampler.c in Sources */ = {isa = PBXBuildFile; fileRef = FC0C00140000000000000001 /* MemorySampler.c */; };
+		FC0C00070000000000000001 /* DiskSampler.c in Sources */ = {isa = PBXBuildFile; fileRef = FC0C00170000000000000001 /* DiskSampler.c */; };
+		FC0C00080000000000000001 /* DiskSampler.c in Sources */ = {isa = PBXBuildFile; fileRef = FC0C00170000000000000001 /* DiskSampler.c */; };
+		FC0C00090000000000000001 /* WidgetKeepAliveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0C00190000000000000001 /* WidgetKeepAliveController.swift */; };
+		FC0D00010000000000000001 /* SystemCleaner.c in Sources */ = {isa = PBXBuildFile; fileRef = FC0D00100000000000000001 /* SystemCleaner.c */; };
+		FC0D00020000000000000001 /* SystemCleanerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0D00120000000000000001 /* SystemCleanerService.swift */; };
+		FC0D00030000000000000001 /* SystemCleanerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0D00130000000000000001 /* SystemCleanerView.swift */; };
+		FC0E00010000000000000001 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0E00100000000000000001 /* Localization.swift */; };
+		FC0E00020000000000000001 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0E00100000000000000001 /* Localization.swift */; };
+		FC0E00030000000000000001 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC0E00200000000000000001 /* Localizable.strings */; };
+		FC0E00040000000000000001 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC0E00200000000000000001 /* Localizable.strings */; };
+		FC0F00010000000000000001 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0F00100000000000000001 /* SplashScreenView.swift */; };
+		FC1000010000000000000001 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = FC1000020000000000000001 /* AppIcon.icon */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		514493462B402F65000DE842 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 514A5BEE28EB15F200274CF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 514493392B402F64000DE842;
+			remoteInfo = widgetExtension;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		5197721D28EB1ECB000FCB61 /* Embed Foundation Extensions */ = {
@@ -21,6 +60,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				514493482B402F65000DE842 /* widgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -28,16 +68,61 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5144933A2B402F64000DE842 /* widgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = widgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5144933B2B402F64000DE842 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		5144933F2B402F64000DE842 /* widgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widgetBundle.swift; sourceTree = "<group>"; };
+		514493412B402F64000DE842 /* widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widget.swift; sourceTree = "<group>"; };
+		514493432B402F65000DE842 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		514493452B402F65000DE842 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		514A5BF628EB15F200274CF6 /* CpuCores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CpuCores.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		514A5BF928EB15F200274CF6 /* CpuCoresApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CpuCoresApp.swift; sourceTree = "<group>"; };
 		514A5BFB28EB15F200274CF6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		514A5BFD28EB15F300274CF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		515707A12B4025DC0059F3EF /* SystemInfoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemInfoProvider.swift; sourceTree = "<group>"; };
+		515707A32B4029480059F3EF /* SystemInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemInfo.swift; sourceTree = "<group>"; };
 		516D72C128EDBBAF00AC7664 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		5197721228EB1EC9000FCB61 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		51AF2A4129BDDDF00088F52D /* DiskStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStatus.swift; sourceTree = "<group>"; };
+		FC0C00100000000000000001 /* MulticoreSampler.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = MulticoreSampler.c; sourceTree = "<group>"; };
+		FC0C00110000000000000001 /* MulticoreSampler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MulticoreSampler.h; sourceTree = "<group>"; };
+		FC0C00120000000000000001 /* CpuCores-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CpuCores-Bridging-Header.h"; sourceTree = "<group>"; };
+		FC0C00130000000000000001 /* CPUCoreMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUCoreMonitor.swift; sourceTree = "<group>"; };
+		FC0C00140000000000000001 /* MemorySampler.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = MemorySampler.c; sourceTree = "<group>"; };
+		FC0C00150000000000000001 /* MemorySampler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemorySampler.h; sourceTree = "<group>"; };
+		FC0C00160000000000000001 /* SystemMemoryMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemMemoryMonitor.swift; sourceTree = "<group>"; };
+		FC0C00170000000000000001 /* DiskSampler.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = DiskSampler.c; sourceTree = "<group>"; };
+		FC0C00180000000000000001 /* DiskSampler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiskSampler.h; sourceTree = "<group>"; };
+		FC0C00190000000000000001 /* WidgetKeepAliveController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetKeepAliveController.swift; sourceTree = "<group>"; };
+		FC0C001A0000000000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC0D00100000000000000001 /* SystemCleaner.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = SystemCleaner.c; sourceTree = "<group>"; };
+		FC0D00110000000000000001 /* SystemCleaner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemCleaner.h; sourceTree = "<group>"; };
+		FC0D00120000000000000001 /* SystemCleanerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemCleanerService.swift; sourceTree = "<group>"; };
+		FC0D00130000000000000001 /* SystemCleanerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemCleanerView.swift; sourceTree = "<group>"; };
+		FC0E00100000000000000001 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		FC0E00110000000000000001 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FC0E00120000000000000001 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FC0E00130000000000000001 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FC0E00140000000000000001 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FC0E00150000000000000001 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FC0E00160000000000000001 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FC0E00170000000000000001 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FC0E00180000000000000001 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FC0E00190000000000000001 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		FC0E001A0000000000000001 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		FC0F00100000000000000001 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		FC1000020000000000000001 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		514493372B402F64000DE842 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5144933D2B402F64000DE842 /* SwiftUI.framework in Frameworks */,
+				5144933C2B402F64000DE842 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		514A5BF328EB15F200274CF6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -48,10 +133,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5144933E2B402F64000DE842 /* widget */ = {
+			isa = PBXGroup;
+			children = (
+				FC0C00240000000000000001 /* Sources */,
+				514493432B402F65000DE842 /* Assets.xcassets */,
+				514493452B402F65000DE842 /* Info.plist */,
+			);
+			path = widget;
+			sourceTree = "<group>";
+		};
 		514A5BED28EB15F200274CF6 = {
 			isa = PBXGroup;
 			children = (
 				514A5BF828EB15F200274CF6 /* CpuCores */,
+				5144933E2B402F64000DE842 /* widget */,
+				FC0E00300000000000000001 /* Shared */,
 				5197720F28EB1EC9000FCB61 /* Frameworks */,
 				514A5BF728EB15F200274CF6 /* Products */,
 			);
@@ -61,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				514A5BF628EB15F200274CF6 /* CpuCores.app */,
+				5144933A2B402F64000DE842 /* widgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,11 +166,12 @@
 		514A5BF828EB15F200274CF6 /* CpuCores */ = {
 			isa = PBXGroup;
 			children = (
-				514A5BF928EB15F200274CF6 /* CpuCoresApp.swift */,
-				514A5BFB28EB15F200274CF6 /* ContentView.swift */,
+				FC0C00200000000000000001 /* App */,
+				FC0C00210000000000000001 /* UI */,
+				FC0C00220000000000000001 /* Core */,
+				FC0C00230000000000000001 /* Native */,
+				FC1000020000000000000001 /* AppIcon.icon */,
 				514A5BFD28EB15F300274CF6 /* Assets.xcassets */,
-				516D72C128EDBBAF00AC7664 /* CardView.swift */,
-				51AF2A4129BDDDF00088F52D /* DiskStatus.swift */,
 			);
 			path = CpuCores;
 			sourceTree = "<group>";
@@ -81,13 +180,107 @@
 			isa = PBXGroup;
 			children = (
 				5197721228EB1EC9000FCB61 /* SwiftUI.framework */,
+				5144933B2B402F64000DE842 /* WidgetKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC0C00200000000000000001 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				514A5BF928EB15F200274CF6 /* CpuCoresApp.swift */,
+				FC0C001A0000000000000001 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FC0C00210000000000000001 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				514A5BFB28EB15F200274CF6 /* ContentView.swift */,
+				516D72C128EDBBAF00AC7664 /* CardView.swift */,
+				FC0D00130000000000000001 /* SystemCleanerView.swift */,
+				FC0F00100000000000000001 /* SplashScreenView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		FC0C00220000000000000001 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				515707A32B4029480059F3EF /* SystemInfo.swift */,
+				515707A12B4025DC0059F3EF /* SystemInfoProvider.swift */,
+				FC0C00130000000000000001 /* CPUCoreMonitor.swift */,
+				FC0C00160000000000000001 /* SystemMemoryMonitor.swift */,
+				FC0C00190000000000000001 /* WidgetKeepAliveController.swift */,
+				FC0D00120000000000000001 /* SystemCleanerService.swift */,
+				51AF2A4129BDDDF00088F52D /* DiskStatus.swift */,
+				FC0E00100000000000000001 /* Localization.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		FC0C00230000000000000001 /* Native */ = {
+			isa = PBXGroup;
+			children = (
+				FC0C00100000000000000001 /* MulticoreSampler.c */,
+				FC0C00110000000000000001 /* MulticoreSampler.h */,
+				FC0C00140000000000000001 /* MemorySampler.c */,
+				FC0C00150000000000000001 /* MemorySampler.h */,
+				FC0C00170000000000000001 /* DiskSampler.c */,
+				FC0C00180000000000000001 /* DiskSampler.h */,
+				FC0D00100000000000000001 /* SystemCleaner.c */,
+				FC0D00110000000000000001 /* SystemCleaner.h */,
+				FC0C00120000000000000001 /* CpuCores-Bridging-Header.h */,
+			);
+			path = Native;
+			sourceTree = "<group>";
+		};
+		FC0C00240000000000000001 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				5144933F2B402F64000DE842 /* widgetBundle.swift */,
+				514493412B402F64000DE842 /* widget.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		FC0E00300000000000000001 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FC0E00310000000000000001 /* Localization */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		FC0E00310000000000000001 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				FC0E00200000000000000001 /* Localizable.strings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		514493392B402F64000DE842 /* widgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 514493492B402F65000DE842 /* Build configuration list for PBXNativeTarget "widgetExtension" */;
+			buildPhases = (
+				514493362B402F64000DE842 /* Sources */,
+				514493372B402F64000DE842 /* Frameworks */,
+				514493382B402F64000DE842 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = widgetExtension;
+			productName = widgetExtension;
+			productReference = 5144933A2B402F64000DE842 /* widgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		514A5BF528EB15F200274CF6 /* CpuCores */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 514A5C0428EB15F300274CF6 /* Build configuration list for PBXNativeTarget "CpuCores" */;
@@ -100,6 +293,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				514493472B402F65000DE842 /* PBXTargetDependency */,
 			);
 			name = CpuCores;
 			productName = CpuCores;
@@ -113,9 +307,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1420;
+				LastSwiftUpdateCheck = 1510;
+				LastUpgradeCheck = 1510;
 				TargetAttributes = {
+					514493392B402F64000DE842 = {
+						CreatedOnToolsVersion = 15.1;
+					};
 					514A5BF528EB15F200274CF6 = {
 						CreatedOnToolsVersion = 13.2.1;
 						LastSwiftMigration = 1420;
@@ -129,6 +326,15 @@
 			knownRegions = (
 				en,
 				Base,
+				it,
+				de,
+				fr,
+				pl,
+				es,
+				ru,
+				ja,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 514A5BED28EB15F200274CF6;
 			productRefGroup = 514A5BF728EB15F200274CF6 /* Products */;
@@ -136,40 +342,177 @@
 			projectRoot = "";
 			targets = (
 				514A5BF528EB15F200274CF6 /* CpuCores */,
+				514493392B402F64000DE842 /* widgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		514493382B402F64000DE842 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				514493442B402F65000DE842 /* Assets.xcassets in Resources */,
+				FC0E00040000000000000001 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		514A5BF428EB15F200274CF6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC1000010000000000000001 /* AppIcon.icon in Resources */,
 				514A5BFE28EB15F300274CF6 /* Assets.xcassets in Resources */,
+				FC0E00030000000000000001 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		514493362B402F64000DE842 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC0E00020000000000000001 /* Localization.swift in Sources */,
+				FC0C00050000000000000001 /* MulticoreSampler.c in Sources */,
+				FC0C00060000000000000001 /* MemorySampler.c in Sources */,
+				FC0C00080000000000000001 /* DiskSampler.c in Sources */,
+				5144934D2B403005000DE842 /* SystemInfo.swift in Sources */,
+				514493402B402F64000DE842 /* widgetBundle.swift in Sources */,
+				514493422B402F64000DE842 /* widget.swift in Sources */,
+				5144934E2B403009000DE842 /* DiskStatus.swift in Sources */,
+				5144934C2B403001000DE842 /* SystemInfoProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		514A5BF228EB15F200274CF6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC0F00010000000000000001 /* SplashScreenView.swift in Sources */,
+				FC0E00010000000000000001 /* Localization.swift in Sources */,
+				FC0C00020000000000000001 /* CPUCoreMonitor.swift in Sources */,
+				FC0C00010000000000000001 /* MulticoreSampler.c in Sources */,
+				FC0C00040000000000000001 /* SystemMemoryMonitor.swift in Sources */,
+				FC0C00030000000000000001 /* MemorySampler.c in Sources */,
+				FC0C00070000000000000001 /* DiskSampler.c in Sources */,
+				FC0D00010000000000000001 /* SystemCleaner.c in Sources */,
+				FC0C00090000000000000001 /* WidgetKeepAliveController.swift in Sources */,
 				514A5BFC28EB15F200274CF6 /* ContentView.swift in Sources */,
 				516D72C228EDBBAF00AC7664 /* CardView.swift in Sources */,
+				FC0D00030000000000000001 /* SystemCleanerView.swift in Sources */,
 				51AF2A4229BDDDF00088F52D /* DiskStatus.swift in Sources */,
 				514A5BFA28EB15F200274CF6 /* CpuCoresApp.swift in Sources */,
+				515707A42B4029480059F3EF /* SystemInfo.swift in Sources */,
+				515707A22B4025DC0059F3EF /* SystemInfoProvider.swift in Sources */,
+				FC0D00020000000000000001 /* SystemCleanerService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		514493472B402F65000DE842 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 514493392B402F64000DE842 /* widgetExtension */;
+			targetProxy = 514493462B402F65000DE842 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FC0E00200000000000000001 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC0E00110000000000000001 /* en */,
+				FC0E00120000000000000001 /* it */,
+				FC0E00130000000000000001 /* de */,
+				FC0E00140000000000000001 /* fr */,
+				FC0E00150000000000000001 /* pl */,
+				FC0E00160000000000000001 /* es */,
+				FC0E00170000000000000001 /* ru */,
+				FC0E00180000000000000001 /* ja */,
+				FC0E00190000000000000001 /* zh-Hans */,
+				FC0E001A0000000000000001 /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		5144934A2B402F65000DE842 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TATX9HZC5M;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = widget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = widget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = it.cpucores.app.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "CpuCores/Native/CpuCores-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5144934B2B402F65000DE842 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TATX9HZC5M;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = widget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = widget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = it.cpucores.app.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "CpuCores/Native/CpuCores-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		514A5C0228EB15F300274CF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -203,6 +546,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -231,6 +575,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -264,6 +609,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -285,17 +631,20 @@
 		514A5C0528EB15F300274CF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGNING_ALLOWED = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TATX9HZC5M;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = CpuCores/App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Cpu Cores";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Glassmorphism background";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -308,12 +657,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = it.cpucores.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "CpuCores/Native/CpuCores-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -324,17 +673,20 @@
 		514A5C0628EB15F300274CF6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGNING_ALLOWED = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TATX9HZC5M;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = CpuCores/App/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Cpu Cores";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Glassmorphism background";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -347,12 +699,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = it.cpucores.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "CpuCores/Native/CpuCores-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -362,6 +714,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		514493492B402F65000DE842 /* Build configuration list for PBXNativeTarget "widgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5144934A2B402F65000DE842 /* Debug */,
+				5144934B2B402F65000DE842 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		514A5BF128EB15F200274CF6 /* Build configuration list for PBXProject "CpuCores" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

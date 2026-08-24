@@ -1,0 +1,67 @@
+"app.title" = "CPU CORES";
+"dashboard.subtitle" = "Statistiques système";
+"status.live" = "DIRECT";
+
+"metric.cpu.title" = "CPU";
+"metric.cpu.subtitle" = "Charge multicœur";
+"metric.ram.title" = "RAM";
+"metric.ram.subtitle" = "Mémoire système";
+"metric.disk.title" = "STOCKAGE";
+"metric.disk.short" = "DISQUE";
+"metric.disk.subtitle" = "Espace utilisé";
+"metric.uptime.title" = "ACTIVITÉ";
+"metric.uptime.subtitle" = "Temps depuis le dernier démarrage";
+"metric.uptime.active" = "SYSTÈME ACTIF";
+"metric.core.format" = "CŒUR %d";
+"metric.core.range_format" = "CŒURS %d–%d";
+"metric.core.group" = "CŒURS";
+
+"memory.used" = "UTILISÉE";
+"memory.total" = "TOTALE";
+"memory.free" = "LIBRE";
+"memory.active" = "ACTIVE";
+"memory.inactive" = "INACTIVE";
+"memory.wired" = "RÉSERVÉE";
+"disk.used" = "UTILISÉ";
+"disk.free" = "LIBRE";
+"disk.total" = "TOTAL";
+
+"loading.cpu" = "Mesure des cœurs…";
+"loading.memory" = "Lecture de la mémoire…";
+"error.cpu.initialize" = "Impossible d’initialiser le moniteur CPU.";
+"error.cpu.read" = "Mesure multicœur indisponible.";
+"error.memory.read" = "Mesure de la mémoire indisponible.";
+"error.disk.read" = "Mesure du disque indisponible.";
+"common.unavailable" = "Indisponible";
+"summary.used_format" = "Utilisé : %@/%@";
+"accessibility.percent_format" = "%d pour cent";
+"accessibility.cancel_format" = "Annuler %@";
+"uptime.format" = "%d j %d h %d min";
+
+"clean.section.title" = "NETTOYAGE DU SYSTÈME";
+"clean.ram.title" = "Nettoyer la RAM";
+"clean.ram.subtitle" = "Crée une pression contrôlée puis libère immédiatement la mémoire.";
+"clean.disk.title" = "Nettoyer le disque";
+"clean.disk.subtitle" = "Demande à APFS de purger les caches supprimables.";
+"clean.disclaimer" = "Le nettoyage est indirect : iOS choisit les caches système qui peuvent être supprimés.";
+"action.cancel" = "Annuler";
+
+"clean.ram.result.success" = "Pression terminée : %@ alloués puis libérés.";
+"clean.ram.result.cancelled" = "Nettoyage de la RAM annulé ; la mémoire temporaire a été libérée.";
+"clean.ram.result.no_work" = "La RAM est déjà sous pression ; l’opération a été ignorée par sécurité.";
+"clean.ram.result.limit" = "Limite mémoire atteinte ; les blocs temporaires ont été libérés.";
+"clean.ram.result.unavailable" = "Le nettoyage de la RAM est actuellement indisponible.";
+"clean.disk.result.success" = "Cycle APFS terminé : %@ de données temporaires supprimées.";
+"clean.disk.result.reclaimed" = "Récupération estimée : %@.";
+"clean.disk.result.cancelled" = "Nettoyage du disque annulé ; le fichier temporaire a été supprimé.";
+"clean.disk.result.no_work" = "Espace libre insuffisant pour conserver la marge de sécurité.";
+"clean.disk.result.memory" = "Mémoire insuffisante pour le tampon d’écriture.";
+"clean.disk.result.io_error" = "Écriture interrompue ; les résidus seront supprimés au prochain cycle.";
+"clean.disk.result.unavailable" = "Le nettoyage APFS est actuellement indisponible.";
+
+"widget.configuration.name" = "CPU Cores";
+"widget.configuration.description" = "CPU multicœur, RAM, stockage et durée d’activité.";
+"widget.battery" = "BATTERIE";
+"widget.cpu.multicore" = "CPU MULTICŒUR";
+"widget.core.unavailable" = "Cœurs indisponibles";
+"widget.core.short_format" = "C%d";

@@ -1,0 +1,67 @@
+"app.title" = "CPU CORES";
+"dashboard.subtitle" = "System statistics";
+"status.live" = "LIVE";
+
+"metric.cpu.title" = "CPU";
+"metric.cpu.subtitle" = "Multicore load";
+"metric.ram.title" = "RAM";
+"metric.ram.subtitle" = "System memory";
+"metric.disk.title" = "STORAGE";
+"metric.disk.short" = "DISK";
+"metric.disk.subtitle" = "Used space";
+"metric.uptime.title" = "UPTIME";
+"metric.uptime.subtitle" = "Time since last boot";
+"metric.uptime.active" = "SYSTEM ACTIVE";
+"metric.core.format" = "CORE %d";
+"metric.core.range_format" = "CORES %d–%d";
+"metric.core.group" = "CORES";
+
+"memory.used" = "USED";
+"memory.total" = "TOTAL";
+"memory.free" = "FREE";
+"memory.active" = "ACTIVE";
+"memory.inactive" = "INACTIVE";
+"memory.wired" = "WIRED";
+"disk.used" = "USED";
+"disk.free" = "FREE";
+"disk.total" = "TOTAL";
+
+"loading.cpu" = "Sampling cores…";
+"loading.memory" = "Reading memory…";
+"error.cpu.initialize" = "Unable to initialize the CPU monitor.";
+"error.cpu.read" = "Multicore reading unavailable.";
+"error.memory.read" = "Memory reading unavailable.";
+"error.disk.read" = "Disk reading unavailable.";
+"common.unavailable" = "Unavailable";
+"summary.used_format" = "Used: %@/%@";
+"accessibility.percent_format" = "%d percent";
+"accessibility.cancel_format" = "Cancel %@";
+"uptime.format" = "%dd %dh %dm";
+
+"clean.section.title" = "SYSTEM CLEANUP";
+"clean.ram.title" = "Clean RAM";
+"clean.ram.subtitle" = "Creates controlled pressure and immediately releases the memory.";
+"clean.disk.title" = "Clean Disk";
+"clean.disk.subtitle" = "Prompts APFS to purge disposable caches.";
+"clean.disclaimer" = "Cleanup is indirect: iOS decides which system caches can be removed.";
+"action.cancel" = "Cancel";
+
+"clean.ram.result.success" = "Pressure completed: %@ committed and released.";
+"clean.ram.result.cancelled" = "RAM cleanup cancelled; temporary memory was released.";
+"clean.ram.result.no_work" = "RAM is already under pressure; the operation was skipped for safety.";
+"clean.ram.result.limit" = "Memory limit reached; temporary blocks were released.";
+"clean.ram.result.unavailable" = "RAM cleanup is currently unavailable.";
+"clean.disk.result.success" = "APFS cycle completed: %@ of temporary data removed.";
+"clean.disk.result.reclaimed" = "Estimated recovery: %@.";
+"clean.disk.result.cancelled" = "Disk cleanup cancelled; the temporary file was removed.";
+"clean.disk.result.no_work" = "Not enough free space to operate while preserving the safety margin.";
+"clean.disk.result.memory" = "Not enough memory for the write buffer.";
+"clean.disk.result.io_error" = "Writing stopped; any residue will be removed during the next cycle.";
+"clean.disk.result.unavailable" = "APFS cleanup is currently unavailable.";
+
+"widget.configuration.name" = "CPU Cores";
+"widget.configuration.description" = "Multicore CPU, RAM, storage and uptime.";
+"widget.battery" = "BATTERY";
+"widget.cpu.multicore" = "MULTICORE CPU";
+"widget.core.unavailable" = "Cores unavailable";
+"widget.core.short_format" = "C%d";

@@ -1,0 +1,67 @@
+"app.title" = "CPU CORES";
+"dashboard.subtitle" = "系统统计";
+"status.live" = "实时";
+
+"metric.cpu.title" = "CPU";
+"metric.cpu.subtitle" = "多核负载";
+"metric.ram.title" = "RAM";
+"metric.ram.subtitle" = "系统内存";
+"metric.disk.title" = "存储";
+"metric.disk.short" = "磁盘";
+"metric.disk.subtitle" = "已用空间";
+"metric.uptime.title" = "运行时间";
+"metric.uptime.subtitle" = "自上次启动以来";
+"metric.uptime.active" = "系统运行中";
+"metric.core.format" = "核心 %d";
+"metric.core.range_format" = "核心 %d–%d";
+"metric.core.group" = "核心";
+
+"memory.used" = "已用";
+"memory.total" = "总计";
+"memory.free" = "空闲";
+"memory.active" = "活跃";
+"memory.inactive" = "非活跃";
+"memory.wired" = "锁定";
+"disk.used" = "已用";
+"disk.free" = "可用";
+"disk.total" = "总计";
+
+"loading.cpu" = "正在采样核心…";
+"loading.memory" = "正在读取内存…";
+"error.cpu.initialize" = "无法初始化 CPU 监视器。";
+"error.cpu.read" = "多核读数不可用。";
+"error.memory.read" = "内存读数不可用。";
+"error.disk.read" = "磁盘读数不可用。";
+"common.unavailable" = "不可用";
+"summary.used_format" = "已用：%@/%@";
+"accessibility.percent_format" = "百分之%d";
+"accessibility.cancel_format" = "取消%@";
+"uptime.format" = "%d天 %d小时 %d分钟";
+
+"clean.section.title" = "系统清理";
+"clean.ram.title" = "清理 RAM";
+"clean.ram.subtitle" = "创建受控内存压力并立即释放内存。";
+"clean.disk.title" = "清理磁盘";
+"clean.disk.subtitle" = "促使 APFS 清除可丢弃的缓存。";
+"clean.disclaimer" = "清理是间接的：iOS 会决定可以删除哪些系统缓存。";
+"action.cancel" = "取消";
+
+"clean.ram.result.success" = "压力处理完成：已分配并释放 %@。";
+"clean.ram.result.cancelled" = "RAM 清理已取消；临时内存已释放。";
+"clean.ram.result.no_work" = "RAM 已处于高压状态；为确保安全已跳过操作。";
+"clean.ram.result.limit" = "已达到内存上限；临时内存块已释放。";
+"clean.ram.result.unavailable" = "RAM 清理当前不可用。";
+"clean.disk.result.success" = "APFS 循环完成：已删除 %@ 临时数据。";
+"clean.disk.result.reclaimed" = "预计恢复：%@。";
+"clean.disk.result.cancelled" = "磁盘清理已取消；临时文件已删除。";
+"clean.disk.result.no_work" = "可用空间不足，无法在保留安全余量的情况下执行。";
+"clean.disk.result.memory" = "写入缓冲区的内存不足。";
+"clean.disk.result.io_error" = "写入已停止；残留数据将在下一个循环中删除。";
+"clean.disk.result.unavailable" = "APFS 清理当前不可用。";
+
+"widget.configuration.name" = "CPU Cores";
+"widget.configuration.description" = "多核 CPU、RAM、存储和运行时间。";
+"widget.battery" = "电池";
+"widget.cpu.multicore" = "多核 CPU";
+"widget.core.unavailable" = "核心不可用";
+"widget.core.short_format" = "C%d";

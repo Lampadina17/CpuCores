@@ -1,0 +1,67 @@
+"app.title" = "CPU CORES";
+"dashboard.subtitle" = "系統統計";
+"status.live" = "即時";
+
+"metric.cpu.title" = "CPU";
+"metric.cpu.subtitle" = "多核心負載";
+"metric.ram.title" = "RAM";
+"metric.ram.subtitle" = "系統記憶體";
+"metric.disk.title" = "儲存空間";
+"metric.disk.short" = "磁碟";
+"metric.disk.subtitle" = "已用空間";
+"metric.uptime.title" = "運作時間";
+"metric.uptime.subtitle" = "自上次啟動以來";
+"metric.uptime.active" = "系統運作中";
+"metric.core.format" = "核心 %d";
+"metric.core.range_format" = "核心 %d–%d";
+"metric.core.group" = "核心";
+
+"memory.used" = "已用";
+"memory.total" = "總計";
+"memory.free" = "空閒";
+"memory.active" = "活躍";
+"memory.inactive" = "非活躍";
+"memory.wired" = "鎖定";
+"disk.used" = "已用";
+"disk.free" = "可用";
+"disk.total" = "總計";
+
+"loading.cpu" = "正在取樣核心…";
+"loading.memory" = "正在讀取記憶體…";
+"error.cpu.initialize" = "無法初始化 CPU 監視器。";
+"error.cpu.read" = "多核心讀數無法使用。";
+"error.memory.read" = "記憶體讀數無法使用。";
+"error.disk.read" = "磁碟讀數無法使用。";
+"common.unavailable" = "無法使用";
+"summary.used_format" = "已用：%@/%@";
+"accessibility.percent_format" = "百分之%d";
+"accessibility.cancel_format" = "取消%@";
+"uptime.format" = "%d天 %d小時 %d分鐘";
+
+"clean.section.title" = "系統清理";
+"clean.ram.title" = "清理 RAM";
+"clean.ram.subtitle" = "建立受控的記憶體壓力並立即釋放記憶體。";
+"clean.disk.title" = "清理磁碟";
+"clean.disk.subtitle" = "促使 APFS 清除可捨棄的快取。";
+"clean.disclaimer" = "清理是間接的：iOS 會決定可以移除哪些系統快取。";
+"action.cancel" = "取消";
+
+"clean.ram.result.success" = "壓力處理完成：已分配並釋放 %@。";
+"clean.ram.result.cancelled" = "RAM 清理已取消；暫存記憶體已釋放。";
+"clean.ram.result.no_work" = "RAM 已處於高壓狀態；為了安全已略過操作。";
+"clean.ram.result.limit" = "已達記憶體上限；暫存區塊已釋放。";
+"clean.ram.result.unavailable" = "RAM 清理目前無法使用。";
+"clean.disk.result.success" = "APFS 循環完成：已移除 %@ 暫存資料。";
+"clean.disk.result.reclaimed" = "預估回復：%@。";
+"clean.disk.result.cancelled" = "磁碟清理已取消；暫存檔案已移除。";
+"clean.disk.result.no_work" = "可用空間不足，無法在保留安全餘裕的情況下執行。";
+"clean.disk.result.memory" = "寫入緩衝區的記憶體不足。";
+"clean.disk.result.io_error" = "寫入已停止；殘留資料將在下一個循環中移除。";
+"clean.disk.result.unavailable" = "APFS 清理目前無法使用。";
+
+"widget.configuration.name" = "CPU Cores";
+"widget.configuration.description" = "多核心 CPU、RAM、儲存空間與運作時間。";
+"widget.battery" = "電池";
+"widget.cpu.multicore" = "多核心 CPU";
+"widget.core.unavailable" = "核心無法使用";
+"widget.core.short_format" = "C%d";

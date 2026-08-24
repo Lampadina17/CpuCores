@@ -1,0 +1,67 @@
+"app.title" = "CPU CORES";
+"dashboard.subtitle" = "Systemstatistiken";
+"status.live" = "LIVE";
+
+"metric.cpu.title" = "CPU";
+"metric.cpu.subtitle" = "Mehrkern-Auslastung";
+"metric.ram.title" = "RAM";
+"metric.ram.subtitle" = "Systemspeicher";
+"metric.disk.title" = "SPEICHER";
+"metric.disk.short" = "SPEICHER";
+"metric.disk.subtitle" = "Belegter Speicher";
+"metric.uptime.title" = "BETRIEBSZEIT";
+"metric.uptime.subtitle" = "Zeit seit dem letzten Start";
+"metric.uptime.active" = "SYSTEM AKTIV";
+"metric.core.format" = "KERN %d";
+"metric.core.range_format" = "KERNE %d–%d";
+"metric.core.group" = "KERNE";
+
+"memory.used" = "BELEGT";
+"memory.total" = "GESAMT";
+"memory.free" = "FREI";
+"memory.active" = "AKTIV";
+"memory.inactive" = "INAKTIV";
+"memory.wired" = "RESERVIERT";
+"disk.used" = "BELEGT";
+"disk.free" = "FREI";
+"disk.total" = "GESAMT";
+
+"loading.cpu" = "Kerne werden erfasst…";
+"loading.memory" = "Speicher wird gelesen…";
+"error.cpu.initialize" = "Der CPU-Monitor konnte nicht initialisiert werden.";
+"error.cpu.read" = "Mehrkern-Messung nicht verfügbar.";
+"error.memory.read" = "Speichermessung nicht verfügbar.";
+"error.disk.read" = "Datenträgermessung nicht verfügbar.";
+"common.unavailable" = "Nicht verfügbar";
+"summary.used_format" = "Belegt: %@/%@";
+"accessibility.percent_format" = "%d Prozent";
+"accessibility.cancel_format" = "%@ abbrechen";
+"uptime.format" = "%d T %d Std %d Min";
+
+"clean.section.title" = "SYSTEMBEREINIGUNG";
+"clean.ram.title" = "RAM bereinigen";
+"clean.ram.subtitle" = "Erzeugt kontrollierten Druck und gibt den Speicher sofort wieder frei.";
+"clean.disk.title" = "Speicher bereinigen";
+"clean.disk.subtitle" = "Fordert APFS auf, entfernbare Caches zu bereinigen.";
+"clean.disclaimer" = "Die Bereinigung erfolgt indirekt: iOS entscheidet, welche System-Caches entfernt werden können.";
+"action.cancel" = "Abbrechen";
+
+"clean.ram.result.success" = "Speicherdruck abgeschlossen: %@ belegt und freigegeben.";
+"clean.ram.result.cancelled" = "RAM-Bereinigung abgebrochen; temporärer Speicher wurde freigegeben.";
+"clean.ram.result.no_work" = "Der RAM steht bereits unter Druck; der Vorgang wurde sicherheitshalber übersprungen.";
+"clean.ram.result.limit" = "Speicherlimit erreicht; temporäre Blöcke wurden freigegeben.";
+"clean.ram.result.unavailable" = "Die RAM-Bereinigung ist derzeit nicht verfügbar.";
+"clean.disk.result.success" = "APFS-Zyklus abgeschlossen: %@ temporäre Daten entfernt.";
+"clean.disk.result.reclaimed" = "Geschätzte Freigabe: %@.";
+"clean.disk.result.cancelled" = "Speicherbereinigung abgebrochen; die temporäre Datei wurde entfernt.";
+"clean.disk.result.no_work" = "Nicht genug freier Speicher, um den Sicherheitsabstand einzuhalten.";
+"clean.disk.result.memory" = "Nicht genug Arbeitsspeicher für den Schreibpuffer.";
+"clean.disk.result.io_error" = "Schreiben gestoppt; Reste werden beim nächsten Durchlauf entfernt.";
+"clean.disk.result.unavailable" = "Die APFS-Bereinigung ist derzeit nicht verfügbar.";
+
+"widget.configuration.name" = "CPU Cores";
+"widget.configuration.description" = "Mehrkern-CPU, RAM, Speicher und Betriebszeit.";
+"widget.battery" = "BATTERIE";
+"widget.cpu.multicore" = "MEHRKERN-CPU";
+"widget.core.unavailable" = "Kerne nicht verfügbar";
+"widget.core.short_format" = "K%d";

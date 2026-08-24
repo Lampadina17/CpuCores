@@ -1,0 +1,67 @@
+"app.title" = "CPU CORES";
+"dashboard.subtitle" = "システム統計";
+"status.live" = "ライブ";
+
+"metric.cpu.title" = "CPU";
+"metric.cpu.subtitle" = "マルチコア負荷";
+"metric.ram.title" = "RAM";
+"metric.ram.subtitle" = "システムメモリ";
+"metric.disk.title" = "ストレージ";
+"metric.disk.short" = "ディスク";
+"metric.disk.subtitle" = "使用済み容量";
+"metric.uptime.title" = "稼働時間";
+"metric.uptime.subtitle" = "前回の起動からの時間";
+"metric.uptime.active" = "システム稼働中";
+"metric.core.format" = "コア%d";
+"metric.core.range_format" = "コア%d〜%d";
+"metric.core.group" = "コア";
+
+"memory.used" = "使用中";
+"memory.total" = "合計";
+"memory.free" = "空き";
+"memory.active" = "アクティブ";
+"memory.inactive" = "非アクティブ";
+"memory.wired" = "ワイヤード";
+"disk.used" = "使用中";
+"disk.free" = "空き";
+"disk.total" = "合計";
+
+"loading.cpu" = "コアを測定中…";
+"loading.memory" = "メモリを読み取り中…";
+"error.cpu.initialize" = "CPUモニタを初期化できません。";
+"error.cpu.read" = "マルチコアの測定を利用できません。";
+"error.memory.read" = "メモリの測定を利用できません。";
+"error.disk.read" = "ディスクの測定を利用できません。";
+"common.unavailable" = "利用不可";
+"summary.used_format" = "使用中：%@/%@";
+"accessibility.percent_format" = "%dパーセント";
+"accessibility.cancel_format" = "「%@」をキャンセル";
+"uptime.format" = "%d日 %d時間 %d分";
+
+"clean.section.title" = "システムクリーンアップ";
+"clean.ram.title" = "RAMをクリーン";
+"clean.ram.subtitle" = "制御されたメモリ負荷を生成し、すぐに解放します。";
+"clean.disk.title" = "ディスクをクリーン";
+"clean.disk.subtitle" = "APFSに削除可能なキャッシュの消去を促します。";
+"clean.disclaimer" = "クリーンアップは間接的です。削除可能なシステムキャッシュはiOSが判断します。";
+"action.cancel" = "キャンセル";
+
+"clean.ram.result.success" = "負荷処理が完了しました：%@を割り当てて解放しました。";
+"clean.ram.result.cancelled" = "RAMのクリーンアップをキャンセルし、一時メモリを解放しました。";
+"clean.ram.result.no_work" = "RAMはすでに高負荷のため、安全上の理由から処理を省略しました。";
+"clean.ram.result.limit" = "メモリ上限に達したため、一時ブロックを解放しました。";
+"clean.ram.result.unavailable" = "RAMのクリーンアップは現在利用できません。";
+"clean.disk.result.success" = "APFSサイクルが完了しました：%@の一時データを削除しました。";
+"clean.disk.result.reclaimed" = "推定回復容量：%@。";
+"clean.disk.result.cancelled" = "ディスクのクリーンアップをキャンセルし、一時ファイルを削除しました。";
+"clean.disk.result.no_work" = "安全マージンを保つための空き容量が不足しています。";
+"clean.disk.result.memory" = "書き込みバッファ用のメモリが不足しています。";
+"clean.disk.result.io_error" = "書き込みを停止しました。残留データは次回のサイクルで削除されます。";
+"clean.disk.result.unavailable" = "APFSのクリーンアップは現在利用できません。";
+
+"widget.configuration.name" = "CPU Cores";
+"widget.configuration.description" = "マルチコアCPU、RAM、ストレージ、稼働時間を表示します。";
+"widget.battery" = "バッテリー";
+"widget.cpu.multicore" = "マルチコアCPU";
+"widget.core.unavailable" = "コア情報を利用できません";
+"widget.core.short_format" = "C%d";
