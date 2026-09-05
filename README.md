@@ -13,6 +13,7 @@
     <img src="https://img.shields.io/badge/version-0.3-34C759" alt="Version 0.3">
     <img src="https://img.shields.io/badge/UI-SwiftUI-F05138?logo=swift&logoColor=white" alt="Built with SwiftUI">
     <img src="https://img.shields.io/badge/widgets-Home%20%26%20Lock%20Screen-5856D6" alt="Home and Lock Screen widgets">
+    <img src="https://img.shields.io/badge/Engineering%20Confidence-4%2F10-F57C00" alt="Engineering Confidence: 4/10">
   </p>
 
   <p>
@@ -30,24 +31,34 @@ CPU Cores turns low-level system readings into a clean, responsive dashboard des
 
 ### Highlights
 
-- **Live CPU monitoring** — total usage and individual load for every logical core.
-- **Memory breakdown** — used, free, active, inactive and wired RAM.
-- **Storage overview** — total, used and available device capacity.
-- **Home Screen widgets** — small, medium and large layouts on iOS 14 and later.
-- **Lock Screen widgets** — circular, rectangular and inline families on iOS 16 and later.
-- **Hardware details** — model, board, architecture, core count, RAM, display, storage, thermal state and uptime.
-- **Battery diagnostics** — health, wear, maximum capacity, design capacity and cycle count on compatible privileged installations.
-- **System cleanup tools** — controlled memory pressure and APFS purge requests, always leaving the final decision to iOS.
-- **Configurable widget refresh** — choose an interval from 1,000 to 5,000 ms for the silent-audio keep-alive.
-- **Ten localizations** — English, Italian, German, Spanish, French, Japanese, Polish, Russian, Simplified Chinese and Traditional Chinese.
+* **Live CPU monitoring** — total usage and individual load for every logical core.
+* **Memory breakdown** — used, free, active, inactive and wired RAM.
+* **Storage overview** — total, used and available device capacity.
+* **Home Screen widgets** — small, medium and large layouts on iOS 14 and later.
+* **Lock Screen widgets** — circular, rectangular and inline families on iOS 16 and later.
+* **Hardware details** — model, board, architecture, core count, RAM, display, storage, thermal state and uptime.
+* **Battery diagnostics** — health, wear, maximum capacity, design capacity and cycle count on compatible privileged installations.
+* **System cleanup tools** — controlled memory pressure and APFS purge requests, always leaving the final decision to iOS.
+* **Configurable widget refresh** — choose an interval from 1,000 to 5,000 ms for the silent-audio keep-alive.
+* **Ten localizations** — English, Italian, German, Spanish, French, Japanese, Polish, Russian, Simplified Chinese and Traditional Chinese.
+
+## Engineering confidence
+
+**4/10 — Verified AI-assisted prototype**
+
+CPU Cores was developed largely through AI-assisted code generation and AI-led reverse engineering.
+
+The implementation has been manually verified, tested and iterated on, but the codebase has not received the same level of deliberate architecture, manual implementation and long-term maintainability work as a mature production project.
+
+The score reflects the **engineering process and maintainability of the codebase**, not whether the application works correctly.
 
 ## Compatibility
 
-| Feature | Requirement |
-| --- | --- |
-| App and Home Screen widgets | iOS or iPadOS 14.0+ |
-| Lock Screen widgets | iOS or iPadOS 16.0+ |
-| Standard system statistics | Any supported installation method |
+| Feature                      | Requirement                                                                                                             |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| App and Home Screen widgets  | iOS or iPadOS 14.0+                                                                                                     |
+| Lock Screen widgets          | iOS or iPadOS 16.0+                                                                                                     |
+| Standard system statistics   | Any supported installation method                                                                                       |
 | Advanced battery diagnostics | TrollStore, TrollStore Lite with an active jailbreak, or another environment granting the required private entitlements |
 
 > [!IMPORTANT]
@@ -61,9 +72,9 @@ Download the current packages from [GitHub Releases](https://github.com/Lampadin
 
 Use the unsigned `.ipa` release asset with a compatible signing or installation tool, such as:
 
-- AltStore or SideStore
-- Sideloadly
-- AppSync Unified on a jailbroken device
+* AltStore or SideStore
+* Sideloadly
+* AppSync Unified on a jailbroken device
 
 This build provides the complete dashboard and widgets, but advanced battery fields normally remain unavailable because Apple does not grant third-party sideloaded apps the required private entitlements.
 
@@ -77,9 +88,9 @@ TrollStore Lite can provide equivalent privileged access while its supporting ja
 
 ### Requirements
 
-- macOS
-- A full Xcode installation with the iOS SDK
-- Command Line Tools selected for that Xcode installation
+* macOS
+* A full Xcode installation with the iOS SDK
+* Command Line Tools selected for that Xcode installation
 
 Clone the repository and run the all-in-one build script:
 
@@ -115,10 +126,10 @@ CPU Cores has no analytics or telemetry. System readings are calculated on the d
 
 Bug reports, compatibility results and focused pull requests are welcome. When reporting a device-specific issue, include:
 
-- device model and iOS/iPadOS version;
-- installation method;
-- jailbreak and TrollStore version, when applicable;
-- whether the issue also occurs after a clean reboot or reinstall.
+* device model and iOS/iPadOS version;
+* installation method;
+* jailbreak and TrollStore version, when applicable;
+* whether the issue also occurs after a clean reboot or reinstall.
 
 ---
 
