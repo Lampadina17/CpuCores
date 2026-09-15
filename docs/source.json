@@ -1,6 +1,6 @@
 {
-  "name": "CPU Cores",
-  "subtitle": "Native system monitoring for iPhone and iPad",
+  "name": "Lampadina_17's repo",
+  "subtitle": "Useful apps Made In Italy",
   "description": "Official AltStore PAL source for CPU Cores.",
   "website": "https://lampadina17.github.io/CpuCores/",
   "tintColor": "#7C6CF2",
@@ -20,10 +20,22 @@
       "iconURL": "https://lampadina17.github.io/CpuCores/icon.png",
       "tintColor": "#7C6CF2",
       "category": "utilities",
-      "screenshots": [
-        "https://lampadina17.github.io/CpuCores/1.png",
-        "https://lampadina17.github.io/CpuCores/2.png"
-      ],
+      "screenshots": {
+        "iphone": [
+          {
+            "imageURL": "https://lampadina17.github.io/CpuCores/1.png",
+            "width": 1242,
+            "height": 2688
+          }
+        ],
+        "ipad": [
+          {
+            "imageURL": "https://lampadina17.github.io/CpuCores/2.png",
+            "width": 2388,
+            "height": 1668
+          }
+        ]
+      },
       "versions": [
         {
           "version": "0.3",
