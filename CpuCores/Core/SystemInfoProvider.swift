@@ -148,6 +148,8 @@ struct DeviceHardwareInfo: Equatable {
 
     private static func batteryHealthDetails() -> BatteryHealthDetails {
         let unavailable = CCLocalized("common.unavailable")
+
+        #if CPUCORES_TROLLSTORE
         var sample = CCBatteryHealthSample()
         guard CCBatteryHealthTakeSample(&sample) else {
             return BatteryHealthDetails(
@@ -174,6 +176,15 @@ struct DeviceHardwareInfo: Equatable {
                 : unavailable,
             cycleCount: sample.hasCycleCount ? String(sample.cycleCount) : unavailable
         )
+        #else
+        return BatteryHealthDetails(
+            health: unavailable,
+            wear: unavailable,
+            maximumCapacity: unavailable,
+            designCapacity: unavailable,
+            cycleCount: unavailable
+        )
+        #endif
     }
 
     private static func thermalStateText(_ state: ProcessInfo.ThermalState) -> String {

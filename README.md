@@ -19,6 +19,8 @@
   <p>
     <a href="https://github.com/Lampadina17/CpuCores/releases/latest"><strong>Download the latest release</strong></a>
     ·
+    <a href="https://lampadina17.github.io/CpuCores/source.json">Add to AltStore PAL</a>
+    ·
     <a href="https://github.com/Lampadina17/CpuCores/issues">Report a bug</a>
   </p>
 </div>
@@ -62,11 +64,17 @@ The score reflects the **engineering process and maintainability of the codebase
 | Advanced battery diagnostics | TrollStore, TrollStore Lite with an active jailbreak, or another environment granting the required private entitlements |
 
 > [!IMPORTANT]
-> Raw battery values are not exposed by the public iOS SDK. They may appear as **Unavailable** when CPU Cores is installed through a standard sideloading method, or when the OS/device does not expose the expected IOKit properties.
+> Raw battery values are not exposed by the public iOS SDK. The standard/PAL build therefore shows them as **Unavailable** and does not compile the private battery implementation. The TrollStore build keeps the advanced diagnostics and may still show **Unavailable** when the OS/device does not expose the expected properties.
 
 ## Installation
 
 Download the current packages from [GitHub Releases](https://github.com/Lampadina17/CpuCores/releases/latest).
+
+### AltStore PAL
+
+As an alternative to sideloading the `.ipa`, add the [CPU Cores source](https://lampadina17.github.io/CpuCores/source.json) to AltStore PAL and install the app directly from there.
+
+AltStore PAL distributes the standard public-API build, so advanced battery fields are unavailable.
 
 ### Standard IPA
 
@@ -76,7 +84,7 @@ Use the unsigned `.ipa` release asset with a compatible signing or installation 
 * Sideloadly
 * AppSync Unified on a jailbroken device
 
-This build provides the complete dashboard and widgets, but advanced battery fields normally remain unavailable because Apple does not grant third-party sideloaded apps the required private entitlements.
+This public-API build provides the complete dashboard and widgets. Battery level and charging state use `UIDevice`; advanced battery fields are unavailable because their private implementation is excluded at compile time. The same `Release` configuration is used for Xcode archives and PAL/notarization workflows.
 
 ### TrollStore package
 
@@ -100,15 +108,17 @@ cd CpuCores
 ./Scripts/build-all.sh Build
 ```
 
-The project is compiled only once and both distributable packages are created inside `Build/`:
+The script performs two independent compilations and creates both distributable packages inside `Build/` (the version below is illustrative):
 
 ```text
 Build/
-├── CpuCores-unsigned.ipa
-└── CpuCores-TrollStore.tipa
+├── CpuCores-0.3.ipa
+└── CpuCores-0.3-TrollStore.tipa
 ```
 
-The script does not modify Xcode project signing settings. It verifies the unsigned payload, the widget extension, the TrollStore signature and the required entitlements before producing the final archives.
+The standard IPA is unsigned so that the intended PAL/sideload signing pipeline can sign it. Its executable is built with the normal `Release` configuration and no TrollStore condition or private entitlements. The TIPA is compiled separately with `Scripts/TrollStore.xcconfig`, which defines `CPUCORES_TROLLSTORE=1` for C and `CPUCORES_TROLLSTORE` for Swift, and is then ad-hoc signed with `Scripts/TrollStore.entitlements`.
+
+Before packaging, the script runs `Scripts/verify-pal-binary.sh` against the app and its embedded widget. The verifier checks strings, undefined symbols, linked libraries and embedded entitlements for the private battery implementation.
 
 To develop or run a normally signed debug build, open `CpuCores.xcodeproj`, select the `CpuCores` scheme and choose your development team in Xcode.
 

@@ -1,11 +1,14 @@
 #include "MemorySampler.h"
 
+#if defined(CPUCORES_TROLLSTORE) && CPUCORES_TROLLSTORE
 #include <CoreFoundation/CoreFoundation.h>
 #include <dlfcn.h>
+#endif
 #include <mach/mach.h>
 #include <mach/mach_host.h>
 #include <string.h>
 
+#if defined(CPUCORES_TROLLSTORE) && CPUCORES_TROLLSTORE
 typedef mach_port_t CCIOObject;
 typedef CCIOObject CCIOService;
 typedef CFArrayRef (*CCIOPSCopyPowerSourcesByTypeFunction)(int type);
@@ -171,6 +174,7 @@ static void CCBatteryPopulateSampleFromMobileGestalt(CCBatteryHealthSample *samp
 
     dlclose(mobileGestalt);
 }
+#endif
 
 bool CCSystemMemoryTakeSample(CCSystemMemorySample *sample) {
     if (sample == NULL) {
@@ -219,6 +223,7 @@ bool CCBatteryHealthTakeSample(CCBatteryHealthSample *sample) {
 
     memset(sample, 0, sizeof(*sample));
 
+#if defined(CPUCORES_TROLLSTORE) && CPUCORES_TROLLSTORE
     void *ioKit = dlopen("/System/Library/Frameworks/IOKit.framework/IOKit", RTLD_LAZY | RTLD_LOCAL);
     if (ioKit == NULL) {
         return false;
@@ -302,4 +307,9 @@ bool CCBatteryHealthTakeSample(CCBatteryHealthSample *sample) {
     dlclose(ioKit);
     return sample->hasMaximumCapacity || sample->hasDesignCapacity ||
         sample->hasCycleCount || sample->hasHealthFraction;
+#else
+    // Apple exposes level and charging state through UIDevice, but it has no
+    // public API for these health values. Leave the zeroed sample unavailable.
+    return false;
+#endif
 }
