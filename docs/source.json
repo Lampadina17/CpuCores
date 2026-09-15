@@ -24,15 +24,15 @@
         "iphone": [
           {
             "imageURL": "https://lampadina17.github.io/CpuCores/1.png",
-            "width": 1242,
-            "height": 2688
+            "width": 750,
+            "height": 1334
           }
         ],
         "ipad": [
           {
             "imageURL": "https://lampadina17.github.io/CpuCores/2.png",
-            "width": 2388,
-            "height": 1668
+            "width": 2048,
+            "height": 1536
           }
         ]
       },
