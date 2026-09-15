@@ -15,7 +15,7 @@
       "developerName": "Lampadina17",
       "subtitle": "Native system monitoring for iPhone and iPad.",
       "localizedDescription": "Monitor CPU usage, memory, storage, hardware information, thermal state and other system statistics directly on your device.",
-      "iconURL": "https://lampadina17.github.io/CpuCores/source-icon.png"
+      "iconURL": "https://lampadina17.github.io/CpuCores/source-icon.png",
       "tintColor": "#7C6CF2",
       "category": "utilities",
       "versions": [
