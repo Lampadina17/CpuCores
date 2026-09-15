@@ -1,0 +1,47 @@
+{
+  "name": "CPU Cores",
+  "subtitle": "Native system monitoring for iPhone and iPad",
+  "description": "Official AltStore PAL source for CPU Cores.",
+  "website": "https://lampadina17.github.io/CpuCores/",
+  "tintColor": "#7C6CF2",
+  "featuredApps": [
+    "me.lampadina.cpucores"
+  ],
+  "apps": [
+    {
+      "name": "CPU Cores",
+      "bundleIdentifier": "me.lampadina.cpucores",
+      "marketplaceID": "6812318901",
+      "developerName": "Lampadina17",
+      "subtitle": "Native system monitoring for iPhone and iPad.",
+      "localizedDescription": "Monitor CPU usage, memory, storage, hardware information, thermal state and other system statistics directly on your device.",
+      "iconURL": "https://lampadina17.github.io/CpuCores/icon.png",
+      "tintColor": "#7C6CF2",
+      "category": "utilities",
+      "versions": [
+        {
+          "version": "0.3",
+          "buildVersion": "1",
+          "date": "2026-09-15",
+          "localizedDescription": "Initial AltStore PAL release.",
+          "downloadURL": "https://github.com/Lampadina17/CpuCores/releases/download/pal-0.3/manifest.json",
+          "size": 1273087,
+          "minOSVersion": "14.0",
+          "assetURLs": {
+            "manifest": "https://github.com/Lampadina17/CpuCores/releases/download/pal-0.3/manifest.json",
+            "signature": "https://github.com/Lampadina17/CpuCores/releases/download/pal-0.3/signature",
+            "3ecb0eca-57d4-37ea-91a4-26716e5f2dd5": "https://github.com/Lampadina17/CpuCores/releases/download/pal-0.3/3ecb0eca-57d4-37ea-91a4-26716e5f2dd5.ipa",
+            "742d1765-b51b-3e0f-9c0a-f40351a44223": "https://github.com/Lampadina17/CpuCores/releases/download/pal-0.3/742d1765-b51b-3e0f-9c0a-f40351a44223.ipa",
+            "c0698b8b-bd9a-35ea-b94b-a08f445b9e84": "https://github.com/Lampadina17/CpuCores/releases/download/pal-0.3/c0698b8b-bd9a-35ea-b94b-a08f445b9e84.ipa",
+            "7ab7a888-dac1-3e6b-afb5-9b0839367190": "https://github.com/Lampadina17/CpuCores/releases/download/pal-0.3/7ab7a888-dac1-3e6b-afb5-9b0839367190.ipa"
+          }
+        }
+      ],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      }
+    }
+  ],
+  "news": []
+}
