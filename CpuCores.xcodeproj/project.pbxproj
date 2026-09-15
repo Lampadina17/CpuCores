@@ -74,7 +74,7 @@
 		514493412B402F64000DE842 /* widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widget.swift; sourceTree = "<group>"; };
 		514493432B402F65000DE842 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		514493452B402F65000DE842 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		514A5BF628EB15F200274CF6 /* CpuCores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CpuCores.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		514A5BF628EB15F200274CF6 /* CPU Cores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CPU Cores.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		514A5BF928EB15F200274CF6 /* CpuCoresApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CpuCoresApp.swift; sourceTree = "<group>"; };
 		514A5BFB28EB15F200274CF6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		514A5BFD28EB15F300274CF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 		514A5BF728EB15F200274CF6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				514A5BF628EB15F200274CF6 /* CpuCores.app */,
+				514A5BF628EB15F200274CF6 /* CPU Cores.app */,
 				5144933A2B402F64000DE842 /* widgetExtension.appex */,
 			);
 			name = Products;
@@ -281,9 +281,9 @@
 			productReference = 5144933A2B402F64000DE842 /* widgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		514A5BF528EB15F200274CF6 /* CpuCores */ = {
+		514A5BF528EB15F200274CF6 /* CPU Cores */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 514A5C0428EB15F300274CF6 /* Build configuration list for PBXNativeTarget "CpuCores" */;
+			buildConfigurationList = 514A5C0428EB15F300274CF6 /* Build configuration list for PBXNativeTarget "CPU Cores" */;
 			buildPhases = (
 				514A5BF228EB15F200274CF6 /* Sources */,
 				514A5BF328EB15F200274CF6 /* Frameworks */,
@@ -295,9 +295,9 @@
 			dependencies = (
 				514493472B402F65000DE842 /* PBXTargetDependency */,
 			);
-			name = CpuCores;
+			name = "CPU Cores";
 			productName = CpuCores;
-			productReference = 514A5BF628EB15F200274CF6 /* CpuCores.app */;
+			productReference = 514A5BF628EB15F200274CF6 /* CPU Cores.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -341,7 +341,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				514A5BF528EB15F200274CF6 /* CpuCores */,
+				514A5BF528EB15F200274CF6 /* CPU Cores */,
 				514493392B402F64000DE842 /* widgetExtension */,
 			);
 		};
@@ -464,7 +464,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 0.3;
-				PRODUCT_BUNDLE_IDENTIFIER = it.cpucores.app.widget;
+				PRODUCT_BUNDLE_IDENTIFIER = me.lampadina.cpucores.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
@@ -498,7 +498,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 0.3;
-				PRODUCT_BUNDLE_IDENTIFIER = it.cpucores.app.widget;
+				PRODUCT_BUNDLE_IDENTIFIER = me.lampadina.cpucores.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -644,7 +644,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = CpuCores/App/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Cpu Cores";
+				INFOPLIST_KEY_CFBundleDisplayName = "CPU Cores";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Glassmorphism background";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -658,7 +658,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.3;
-				PRODUCT_BUNDLE_IDENTIFIER = it.cpucores.app;
+				PRODUCT_BUNDLE_IDENTIFIER = me.lampadina.cpucores;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -686,7 +686,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = CpuCores/App/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Cpu Cores";
+				INFOPLIST_KEY_CFBundleDisplayName = "CPU Cores";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Glassmorphism background";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -700,7 +700,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.3;
-				PRODUCT_BUNDLE_IDENTIFIER = it.cpucores.app;
+				PRODUCT_BUNDLE_IDENTIFIER = me.lampadina.cpucores;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -732,7 +732,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		514A5C0428EB15F300274CF6 /* Build configuration list for PBXNativeTarget "CpuCores" */ = {
+		514A5C0428EB15F300274CF6 /* Build configuration list for PBXNativeTarget "CPU Cores" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				514A5C0528EB15F300274CF6 /* Debug */,

@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "514A5BF528EB15F200274CF6"
-               BuildableName = "CpuCores.app"
-               BlueprintName = "CpuCores"
+               BuildableName = "CPU Cores.app"
+               BlueprintName = "CPU Cores"
                ReferencedContainer = "container:CpuCores.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "514A5BF528EB15F200274CF6"
-            BuildableName = "CpuCores.app"
-            BlueprintName = "CpuCores"
+            BuildableName = "CPU Cores.app"
+            BlueprintName = "CPU Cores"
             ReferencedContainer = "container:CpuCores.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "514A5BF528EB15F200274CF6"
-            BuildableName = "CpuCores.app"
-            BlueprintName = "CpuCores"
+            BuildableName = "CPU Cores.app"
+            BlueprintName = "CPU Cores"
             ReferencedContainer = "container:CpuCores.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
