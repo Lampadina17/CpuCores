@@ -1,40 +1,105 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="CPU Cores support">
+  <meta name="theme-color" content="#0b1024">
+  <meta name="description" content="CPU Cores support, compatibility information and bug reporting.">
+  <meta property="og:title" content="Support — CPU Cores">
+  <meta property="og:description" content="Compatibility information, releases and bug reporting for CPU Cores.">
+  <meta property="og:image" content="https://lampadina17.github.io/CpuCores/og.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lampadina17.github.io/CpuCores/support/">
+  <meta name="twitter:card" content="summary_large_image">
   <title>Support — CPU Cores</title>
+  <link rel="icon" href="../icon.png">
+  <link rel="stylesheet" href="../vendor/bootstrap-icons/bootstrap-icons.min.css">
   <link rel="stylesheet" href="../style.css">
+  <script src="../layout.js" defer></script>
 </head>
+
 <body>
-  <main>
-    <span class="badge">CPU Cores</span>
-    <h1>Support</h1>
-    <p class="muted">Help, bug reports and compatibility questions.</p>
+  <site-header page="support"></site-header>
+  <main class="page-container">
+    <section class="support-section">
+      <header class="support-header">
+        <p class="support-kicker">Help & Community</p>
+        <h1 class="support-title">Support & Issues</h1>
+        <p class="support-lead">Need assistance or found a bug? Learn how to report issues effectively on our GitHub repository.</p>
+      </header>
 
-    <section class="card">
-      <p>You can also open an issue on the public GitHub repository.</p>
-      <p><a class="button" href="https://github.com/Lampadina17/CpuCores/issues/new">Report an issue</a></p>
+      <div class="support-grid">
+        <!-- Main Issue Guide Card -->
+        <article class="support-card glass-panel">
+          <div class="support-card-top">
+            <div class="support-icon-box">
+              <i class="bi bi-github" aria-hidden="true"></i>
+            </div>
+            <span class="support-tag">Issue Tracker</span>
+          </div>
+
+          <h2 class="support-card-name">How to open a GitHub Issue</h2>
+          <p class="support-card-desc">
+            All bug reports and technical questions are tracked publicly on GitHub. Please check existing issues first to avoid duplicates before creating a new one.
+          </p>
+
+          <div class="support-checklist">
+            <h3 class="support-checklist-title">What to include in your report:</h3>
+            <ul class="support-list">
+              <li>
+                <div class="support-list-bullet"><i class="bi bi-check2" aria-hidden="true"></i></div>
+                <div>
+                  <strong>Device Model & iOS Version</strong>
+                  <p>e.g., iPhone 13 Pro running iOS 16.5, or iPad Air (5th gen) on iPadOS 17.2.</p>
+                </div>
+              </li>
+              <li>
+                <div class="support-list-bullet"><i class="bi bi-check2" aria-hidden="true"></i></div>
+                <div>
+                  <strong>Installation Method</strong>
+                  <p>Specify whether you installed via AltStore PAL, standard sideloading (.ipa), or TrollStore (.tipa).</p>
+                </div>
+              </li>
+              <li>
+                <div class="support-list-bullet"><i class="bi bi-check2" aria-hidden="true"></i></div>
+                <div>
+                  <strong>Environment Details</strong>
+                  <p>If applicable, state your TrollStore version, jailbreak status, or signing tool.</p>
+                </div>
+              </li>
+              <li>
+                <div class="support-list-bullet"><i class="bi bi-check2" aria-hidden="true"></i></div>
+                <div>
+                  <strong>Steps to Reproduce & Expected Behavior</strong>
+                  <p>Clear step-by-step instructions leading to the issue, what you expected to see, and screenshots/screen recordings if helpful.</p>
+                </div>
+              </li>
+              <li>
+                <div class="support-list-bullet"><i class="bi bi-check2" aria-hidden="true"></i></div>
+                <div>
+                  <strong>Reboot / Reinstall Check</strong>
+                  <p>Confirm whether the issue persists after a clean device reboot or a fresh reinstall.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="support-actions">
+            <a class="button button-primary" href="https://github.com/Lampadina17/CpuCores/issues/new" target="_blank" rel="noopener">
+              <i class="bi bi-plus-circle" aria-hidden="true"></i>
+              <span>Open an Issue on GitHub</span>
+            </a>
+            <a class="button button-secondary" href="https://github.com/Lampadina17/CpuCores/issues" target="_blank" rel="noopener">
+              <i class="bi bi-search" aria-hidden="true"></i>
+              <span>Browse Existing Issues</span>
+            </a>
+          </div>
+        </article>
+      </div>
     </section>
-
-    <section class="card">
-      <h2>When reporting a problem</h2>
-      <ul>
-        <li>Include your iPhone or iPad model.</li>
-        <li>Include your iOS/iPadOS version.</li>
-        <li>Describe how CPU Cores was installed.</li>
-        <li>Explain the steps needed to reproduce the issue.</li>
-      </ul>
-    </section>
-
-    <nav>
-      <a href="../">Home</a>
-      <a href="../privacy/">Privacy</a>
-      <a href="https://github.com/Lampadina17/CpuCores">GitHub</a>
-    </nav>
-
-    <footer>CPU Cores</footer>
   </main>
+  <site-footer></site-footer>
 </body>
+
 </html>

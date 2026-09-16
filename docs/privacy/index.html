@@ -1,38 +1,86 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="CPU Cores Privacy Policy">
-  <title>Privacy Policy — CPU Cores</title>
+  <meta name="theme-color" content="#0b1024">
+  <meta name="description" content="CPU Cores privacy policy. No analytics, tracking or remote collection.">
+  <meta property="og:title" content="Privacy — CPU Cores">
+  <meta property="og:description"
+    content="No analytics, no accounts and no remote collection. Your system readings stay on device.">
+  <meta property="og:image" content="https://lampadina17.github.io/CpuCores/og.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lampadina17.github.io/CpuCores/privacy/">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Privacy — CPU Cores</title>
+  <link rel="icon" href="../icon.png">
+  <link rel="stylesheet" href="../vendor/bootstrap-icons/bootstrap-icons.min.css">
   <link rel="stylesheet" href="../style.css">
+  <script src="../layout.js" defer></script>
 </head>
+
 <body>
-  <main>
-    <span class="badge">CPU Cores</span>
-    <h1>Privacy Policy</h1>
-    <p class="muted">Last updated: September 15, 2026</p>
+  <site-header page="privacy"></site-header>
+  <main class="page-container">
+    <section class="privacy-section">
+      <header class="privacy-header">
+        <p class="privacy-kicker">Data & Transparency</p>
+        <h1 class="privacy-title">Privacy Policy</h1>
+        <p class="privacy-lead">CPU Cores is built with privacy at its core. Your device data belongs to you alone.</p>
+      </header>
 
-    <section class="card">
-      <h2>Data collection</h2>
-      <p>CPU Cores does not include analytics or telemetry and does not collect,
-      store, sell, or transmit personal data to a remote service.</p>
-      <p>System readings and device statistics displayed by the app are processed
-      locally on the device.</p>
+      <div class="privacy-grid">
+        <article class="privacy-card glass-panel">
+          <div class="privacy-card-top">
+            <div class="privacy-icon-box">
+              <i class="bi bi-shield-check" aria-hidden="true"></i>
+            </div>
+            <span class="privacy-tag">100% On-Device</span>
+          </div>
+
+          <h2 class="privacy-card-name">Your data never leaves your device</h2>
+          <p class="privacy-card-desc">
+            CPU Cores does not send any data externally. The only metrics the app reads are displayed directly inside the app interface and never leave your device under any circumstances.
+          </p>
+
+          <div class="privacy-points">
+            <div class="privacy-point-item">
+              <div class="privacy-point-icon"><i class="bi bi-cloud-slash" aria-hidden="true"></i></div>
+              <div>
+                <strong>Zero External Connections</strong>
+                <p>No analytics, no crash trackers, no telemetry, and no network calls to external servers.</p>
+              </div>
+            </div>
+
+            <div class="privacy-point-item">
+              <div class="privacy-point-icon"><i class="bi bi-cpu" aria-hidden="true"></i></div>
+              <div>
+                <strong>Local-Only System Readings</strong>
+                <p>CPU usage, RAM allocation, disk capacity, and hardware details are queried via local system APIs and rendered on-screen in real time.</p>
+              </div>
+            </div>
+
+            <div class="privacy-point-item">
+              <div class="privacy-point-icon"><i class="bi bi-person-x" aria-hidden="true"></i></div>
+              <div>
+                <strong>No Accounts or Personal Info</strong>
+                <p>We do not collect names, emails, identifiers, device IDs, or any identifiable personal data.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="privacy-actions">
+            <a class="button button-secondary" href="https://github.com/Lampadina17/CpuCores" target="_blank" rel="noopener">
+              <i class="bi bi-github" aria-hidden="true"></i>
+              <span>Inspect the Source Code</span>
+            </a>
+          </div>
+        </article>
+      </div>
     </section>
-
-    <section class="card">
-      <h2>Third-party services</h2>
-      <p>CPU Cores does not use third-party analytics or advertising services.</p>
-    </section>
-
-    <nav>
-      <a href="../">Home</a>
-      <a href="../support/">Support</a>
-      <a href="https://github.com/Lampadina17/CpuCores">GitHub</a>
-    </nav>
-
-    <footer>CPU Cores</footer>
   </main>
+  <site-footer></site-footer>
 </body>
+
 </html>

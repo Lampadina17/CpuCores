@@ -1,46 +1,99 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="CPU Cores — native system monitor for iPhone and iPad.">
-  <title>CPU Cores</title>
+  <meta name="theme-color" content="#0b1024">
+  <meta name="description" content="CPU Cores is a fast, native system monitor for iPhone and iPad.">
+  <meta property="og:title" content="CPU Cores — Your device, clearly">
+  <meta property="og:description"
+    content="Live CPU load, memory, storage and hardware details in one native dashboard.">
+  <meta property="og:image" content="https://lampadina17.github.io/CpuCores/og.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lampadina17.github.io/CpuCores/">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>CPU Cores — Your device, clearly</title>
+  <link rel="icon" href="./icon.png">
+  <link rel="stylesheet" href="./vendor/bootstrap-icons/bootstrap-icons.min.css">
   <link rel="stylesheet" href="./style.css">
+  <script src="./layout.js" defer></script>
 </head>
+
 <body>
-  <main>
-    <span class="badge">CPU Cores</span>
-    <h1>Your device, explained in real time.</h1>
-    <p class="muted">A fast, native system monitor for iPhone and iPad.</p>
-
-    <nav>
-      <a href="./support/">Support</a>
-      <a href="./privacy/">Privacy</a>
-      <a href="https://github.com/Lampadina17/CpuCores">GitHub</a>
-      <a href="https://github.com/Lampadina17/CpuCores/releases">Releases</a>
-    </nav>
-
-    <section class="card">
-      <h2>About CPU Cores</h2>
-      <p>CPU Cores displays per-core CPU usage, memory, storage, hardware information,
-      thermal state, uptime and widgets in a lightweight native interface.</p>
-      <p>System readings are processed locally on the device.</p>
+  <site-header page="overview"></site-header>
+  <main class="overview">
+    <section class="overview-hero" aria-labelledby="overview-title">
+      <div class="overview-copy">
+        <p class="overview-kicker">CPU Cores</p>
+        <h1 id="overview-title" class="overview-title">System stats made simple.</h1>
+        <p class="overview-lead">The essential system information for your iPhone, in one quiet dashboard.</p>
+      </div>
+      <div class="overview-device" aria-label="CPU Cores running on iPhone SE (3rd generation)">
+        <div class="iphone-se">
+          <div class="iphone-se-top" aria-hidden="true">
+            <span></span>
+          </div>
+          <img src="./1.png" alt="CPU Cores dashboard showing CPU, memory and system information">
+          <div class="iphone-se-home" aria-hidden="true"></div>
+        </div>
+      </div>
     </section>
 
-    <section class="card">
-      <h2>Highlights</h2>
-      <ul>
-        <li>Per-core CPU monitoring</li>
-        <li>Memory and storage overview</li>
-        <li>Hardware and thermal information</li>
-        <li>Home Screen and Lock Screen widgets</li>
-        <li>Open-source project</li>
-      </ul>
-    </section>
+    <section class="overview-features" aria-labelledby="features-title">
+      <div class="features-header">
+        <p class="features-kicker">Capabilities & Insights</p>
+        <h2 id="features-title" class="features-title">Complete hardware visibility.</h2>
+        <p class="features-subtitle">Low-level system metrics rendered in real time with lightweight native efficiency.</p>
+      </div>
 
-    <footer>
-      © 2026 CPU Cores · <a href="https://github.com/Lampadina17/CpuCores">Source code</a>
-    </footer>
+      <div class="features-grid">
+        <article class="feature-card glass-panel">
+          <div class="feature-icon-box">
+            <i class="bi bi-cpu" aria-hidden="true"></i>
+          </div>
+          <h3 class="feature-name">Per-core load up to 8 cores</h3>
+          <p class="feature-desc">Real-time total CPU workload and independent logical core load for up to 8 cores.</p>
+        </article>
+
+        <article class="feature-card glass-panel">
+          <div class="feature-icon-box">
+            <i class="bi bi-memory" aria-hidden="true"></i>
+          </div>
+          <h3 class="feature-name">Memory breakdown</h3>
+          <p class="feature-desc">Accurate breakdown of system RAM across used, free, active, inactive, and wired memory.</p>
+        </article>
+
+        <article class="feature-card glass-panel">
+          <div class="feature-icon-box">
+            <i class="bi bi-hdd" aria-hidden="true"></i>
+          </div>
+          <h3 class="feature-name">Storage breakdown</h3>
+          <p class="feature-desc">Instant disk space diagnostics with clean separation between total, used, and available capacity.</p>
+        </article>
+
+        <article class="feature-card glass-panel">
+          <div class="feature-icon-box">
+            <i class="bi bi-stars" aria-hidden="true"></i>
+          </div>
+          <h3 class="feature-name">Indirect RAM & storage cleanup</h3>
+          <p class="feature-desc">Safe memory pressure signals and APFS purge requests, delegating final resource optimization to iOS.</p>
+        </article>
+
+        <article class="feature-card feature-card-featured glass-panel">
+          <div class="feature-card-top">
+            <div class="feature-icon-box">
+              <i class="bi bi-battery-charging" aria-hidden="true"></i>
+            </div>
+            <span class="feature-tag">TrollStore / TrollStore Lite</span>
+          </div>
+          <h3 class="feature-name">Advanced battery diagnostics</h3>
+          <p class="feature-desc">Deep hardware analytics exposing real battery health, wear percentage, cycle count, maximum capacity, and design capacity on privileged setups.</p>
+        </article>
+      </div>
+    </section>
   </main>
+  <site-footer></site-footer>
 </body>
+
 </html>
