@@ -16,13 +16,7 @@
     <img src="https://img.shields.io/badge/Engineering%20Confidence-4%2F10-F57C00" alt="Engineering Confidence: 4/10">
   </p>
 
-  <p>
-    <a href="https://github.com/Lampadina17/CpuCores/releases/latest"><strong>Download the latest release</strong></a>
-    ·
-    <a href="altstore://source?url=https://lampadina17.github.io/CpuCores/source.json">Add to AltStore PAL</a>
-    ·
-    <a href="https://github.com/Lampadina17/CpuCores/issues">Report a bug</a>
-  </p>
+  Download CPU Cores and choose the installation method that fits your device from the [official installation page](https://lampadina17.github.io/CpuCores/install/).
 </div>
 
 ---
