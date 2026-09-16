@@ -19,7 +19,7 @@
   <p>
     <a href="https://github.com/Lampadina17/CpuCores/releases/latest"><strong>Download the latest release</strong></a>
     ·
-    <a href="https://lampadina17.github.io/CpuCores/source.json">Add to AltStore PAL</a>
+    <a href="altstore://source?url=https://lampadina17.github.io/CpuCores/source.json">Add to AltStore PAL</a>
     ·
     <a href="https://github.com/Lampadina17/CpuCores/issues">Report a bug</a>
   </p>
